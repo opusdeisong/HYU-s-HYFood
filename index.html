@@ -23,9 +23,20 @@
     </script>
     <style>
       body {
+        /* 원래의 스타일 */
         margin: 0;
         padding: 0;
+      
+        /* 배경색 수정 */
+        background-color: rgba(240, 248, 255, 0.5); /* 아주 연한 채도의 노란색을 섞은 흰색 */
+      
+        /* 배경 그리드 수정 */
+        background-image: radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 0),
+                          radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 0);
+        background-size: 30px 30px; /* 그리드 간격 설정 */
+        background-position: 0 0, 15px 15px;
       }
+      
       a {
           text-decoration: none;
       }
