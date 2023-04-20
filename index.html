@@ -4,7 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const navbar = document.querySelector('#category-bar');
+        const logoContainer = document.querySelector('.logo-container');
+      
+        window.addEventListener('scroll', function() {
+          const navbarHeight = navbar.offsetHeight;
+          const scrollPosition = window.pageYOffset;
+      
+          if (scrollPosition >= logoContainer.offsetHeight) {
+            navbar.classList.add('fixed');
+          } else {
+            navbar.classList.remove('fixed');
+          }
+        });
+      });
+    </script>
     <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
       a {
           text-decoration: none;
       }
@@ -15,9 +36,18 @@
       }
       #category-bar {
         background-color: rgb(0, 100, 255);
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0;
+      }
+      #category-bar.fixed {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
       }
       #category-bar-buttons {
-        margin-left: 300px;
+        margin-left: 10%;
       }
       #category-bar-buttons button {
         font: inherit;
@@ -33,7 +63,9 @@
   </head>
   <body>
     <header>
-      <a href="index.html" id="logo">HYU food</a>
+      <div class="logo-container">
+        <div class="logo"><a href="index.html" id="logo">HYU food</a></div>
+      </div>
     </header>
 
     <main>
@@ -46,6 +78,33 @@
           <button id="cafe-button">카페</button>
         </div>
       </div>
+      <p>스크롤을 내려 네비게이션바가 로고를 가리면 상단에 고정됩니다.</p>
+      <p>스크롤을 내려 네비게이션바가 로고를 가리면 상단에 고정됩니다.</p>
+      <p>스크롤을 내려 네비게이션바가 로고를 가리면 상단에 고정됩니다.</p>
+      <p>스크롤을 내려 네비게이션바가 로고를 가리면 상단에 고정됩니다.</p>
+      <p>스크롤을 내려 네비게이션바가 로고를 가리면 상단에 고정됩니다.</p>
+      <p>스크롤을 내려 네비게이션바가 로고를 가리면 상단에 고정됩니다.</p>
+      <p>스크롤을 내려 네비게이션바가 로고를 가리면 상단에 고정됩니다.</p>
+      <p>스크롤을 내려 네비게이션바가 로고를 가리면 상단에 고정됩니다.</p>
+      <p>스크롤을 내려 네비게이션바가 로고를 가리면 상단에 고정됩니다.</p>
+      <p>스크롤을 내려 네비게이션바가 로고를 가리면 상단에 고정됩니다.</p>
+      <p>스크롤을 내려 네비게이션바가 로고를 가리면 상단에 고정됩니다.</p>
+      <p>스크롤을 내려 네비게이션바가 로고를 가리면 상단에 고정됩니다.</p>
+      <p>스크롤을 내려 네비게이션바가 로고를 가리면 상단에 고정됩니다.</p>
+      <p>스크롤을 내려 네비게이션바가 로고를 가리면 상단에 고정됩니다.</p>
+      <p>스크롤을 내려 네비게이션바가 로고를 가리면 상단에 고정됩니다.</p>
+      <p>스크롤을 내려 네비게이션바가 로고를 가리면 상단에 고정됩니다.</p>
+      <p>스크롤을 내려 네비게이션바가 로고를 가리면 상단에 고정됩니다.</p>
+      <p>스크롤을 내려 네비게이션바가 로고를 가리면 상단에 고정됩니다.</p>
+      <p>스크롤을 내려 네비게이션바가 로고를 가리면 상단에 고정됩니다.</p>
+      <p>스크롤을 내려 네비게이션바가 로고를 가리면 상단에 고정됩니다.</p>
+      <p>스크롤을 내려 네비게이션바가 로고를 가리면 상단에 고정됩니다.</p>
+      <p>스크롤을 내려 네비게이션바가 로고를 가리면 상단에 고정됩니다.</p>
+      <p>스크롤을 내려 네비게이션바가 로고를 가리면 상단에 고정됩니다.</p>
+      <p>스크롤을 내려 네비게이션바가 로고를 가리면 상단에 고정됩니다.</p>
+      <p>스크롤을 내려 네비게이션바가 로고를 가리면 상단에 고정됩니다.</p>
+      <p>스크롤을 내려 네비게이션바가 로고를 가리면 상단에 고정됩니다.</p>
+
     </main>
   </body>
 </html>
