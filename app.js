@@ -21,7 +21,10 @@ document.addEventListener("DOMContentLoaded", function () {
   let previousMousePosition = null;
 
   mapImage.style.transform = `translate(${translation.x}px, ${translation.y}px) scale(${scale})`;
-
+  mapImage.addEventListener("dragstart", (e) => {
+    // 이벤트의 기본 동작을 막습니다.
+    e.preventDefault();
+  });
   mapContainer.addEventListener("mousedown", (e) => {
     isDragging = true;
     previousMousePosition = { x: e.clientX, y: e.clientY };
