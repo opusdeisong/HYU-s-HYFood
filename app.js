@@ -81,6 +81,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
       translation.x += dx;
       translation.y += dy;
+
+      // 지도 이미지가 지정된 범위 내에서만 드래그할 수 있도록 제한
+      translation.x = Math.min(0, Math.max(translation.x, mapContainer.clientWidth - mapImage.clientWidth * scale));
+      translation.y = Math.min(0, Math.max(translation.y, mapContainer.clientHeight - mapImage.clientHeight * scale));
+
       mapImage.style.transform = `translate(${translation.x}px, ${translation.y}px) scale(${scale})`;
 
       previousMousePosition = { x: e.clientX, y: e.clientY };
