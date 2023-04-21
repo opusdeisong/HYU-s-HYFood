@@ -1,37 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const navbar = document.querySelector("#category-bar");
   const logoContainer = document.querySelector(".logo-container");
-  const buttons = {
-    korean: document.getElementById("korean-button"),
-    western: document.getElementById("western-button"),
-    chinese: document.getElementById("chinese-button"),
-    japanese: document.getElementById("japanese-button"),
-    cafe: document.getElementById("cafe-button"),
-};
 
-const contents = {
-    korean: document.getElementById("korean-content"),
-    western: document.getElementById("western-content"),
-    chinese: document.getElementById("chinese-content"),
-    japanese: document.getElementById("japanese-content"),
-    cafe: document.getElementById("cafe-content"),
-};
-
-function showContent(category) {
-    for (const key in contents) {
-        if (key === category) {
-            contents[key].style.display = "block";
-        } else {
-            contents[key].style.display = "none";
-        }
-    }
-}
-
-for (const key in buttons) {
-    buttons[key].addEventListener("click", function () {
-        showContent(key);
-    });
-}
   window.addEventListener("scroll", function () {
     const navbarHeight = navbar.offsetHeight;
     const scrollPosition = window.pageYOffset;
