@@ -12,8 +12,8 @@ HYU Food Map is a project dedicated to helping HYU students find delicious food 
 
 - [Features](#features)
 - [Usage](#usage)
-- [Getting Started](#Getting_Started)
-- [Feedback & Suggestions](#Feedback&Suggestions)
+- [Getting Started](#Getting-Started)
+- [Feedback & Suggestions](#Feedback-&-Suggestions)
 
 ## Features
 
@@ -37,7 +37,7 @@ To use HYU Food Map, follow these simple steps:
 
 Feel free to share the HYU Food Map with your friends and classmates to help them discover new food options around campus.
 
-## Getting_Started
+## Getting Started
 
 To get started with HYU Food Map, simply visit the live website:
 
@@ -45,7 +45,7 @@ To get started with HYU Food Map, simply visit the live website:
 
 There's no need to install anything on your local machine. Just open the link in your favorite web browser and start exploring the food options!
 
-## Feedback&Suggestions
+## Feedback & Suggestions
 
 We welcome your feedback and suggestions to improve the HYU Food Map! You can submit your ideas by opening an issue on the GitHub repository or contacting the project maintainers directly.
 
