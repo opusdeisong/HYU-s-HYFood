@@ -22,7 +22,7 @@ body {
 }
 .content-wrapper {
   display: flex;
-  flex-wrap: wrap; /* 추가 */
+  flex-wrap: nowrap; /* 추가 */
 }
 .left-scrollable {
   width: 300px; /* 수정된 너비 비율 설정 */
@@ -32,12 +32,12 @@ body {
   padding: 1.5rem; /* 적절한 패딩 적용 */
 }
 .image-container {
-  width: 60vw; /* 수정된 너비 비율 설정 */
+  width: 100vw; /* 수정된 너비 비율 설정 */
   height: 100vh;
   display: flex; /* 추가 */
   justify-content: center; /* 추가 */
   align-items: center; /* 추가 */
-  position: relative;
+  position: relative; /* 추가 */
   overflow: hidden;
 }
 
