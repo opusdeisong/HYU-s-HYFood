@@ -29,7 +29,7 @@ body {
   height: 100vh; /* 전체 화면 높이 */
   overflow-y: scroll; /* 수직 스크롤 활성화 */
   background-color: #f0f8ff; /* 배경색 설정 */
-  padding: 1rem; /* 적절한 패딩 적용 */
+  padding: 1.5rem; /* 적절한 패딩 적용 */
 }
 .image-container {
   width: 60vw; /* 수정된 너비 비율 설정 */
@@ -73,6 +73,8 @@ a {
 }
 #category-bar-buttons button {
   font: inherit;
+  font-size: large;
+  font-weight: 600;
   cursor: pointer;
   background-color: transparent;
   color: white;
