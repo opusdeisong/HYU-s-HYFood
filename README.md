@@ -12,8 +12,8 @@ HYU Food Map is a project dedicated to helping HYU students find delicious food 
 
 - [Features](#features)
 - [Usage](#usage)
-- [Getting Started](#Getting Started)
-- [Feedback & Suggestions](#Feedback & Suggestions)
+- [Getting Started](#Getting)
+- [Feedback & Suggestions](#Feedback)
 
 ## Features
 
