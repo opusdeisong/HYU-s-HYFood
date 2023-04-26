@@ -4,6 +4,8 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/opusdeisong/HYU-s-HYFood)
 ![GitHub License](https://img.shields.io/github/license/opusdeisong/HYU-s-HYFood)
 
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fopusdeisong%2FHYU-s-HYFood&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false">
+
 
 
 HYU Food Map is a project dedicated to helping HYU students find delicious food around campus. This interactive map includes information about various food options, so you'll never go hungry again!
