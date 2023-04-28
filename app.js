@@ -15,6 +15,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const mapImage = document.getElementById("map-image");
   const mapContainer = document.getElementById("map-container");
 
+  const pinpoint1 = document.getElementById("pp1");
+  const pinpoint1Rect = pinpoint1.getBoundingClientRect();
+  const imageRect = mapImage.getBoundingClientRect();
+  const relativePP1Top = pinpoint1Rect.top - imageRect.top;
+  const relativePP1Left = pinpoint1Rect.left - imageRect.left;
+
   let scale = 1;
   let translation = { x: 0, y: 0 };
   let isDragging = false;
@@ -38,6 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
       translation.x += dx;
       translation.y += dy;
       mapImage.style.transform = `translate(${translation.x}px, ${translation.y}px) scale(${scale})`;
+      
+      pinpoint1.style.transform = `translate(${translation.x}px, ${translation.y}px) scale(${1})`;
 
       previousMousePosition = { x: e.clientX, y: e.clientY };
     }
@@ -53,6 +61,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const scaleFactor = 1.1;
     scale = e.deltaY < 0 ? scale * scaleFactor : scale / scaleFactor;
     mapImage.style.transform = `translate(${translation.x}px, ${translation.y}px) scale(${scale})`;
+
+    const newPP1Top = relativePP1Top * scale;
+    const newPP1Left = relativePP1Left * scale;
+    pinpoint1.style.top = `${newPP1Top}px`;
+    pinpoint1.style.left = `${newPP1Left}px`;
   });
 });
 document.addEventListener("DOMContentLoaded", function () {
@@ -68,6 +81,12 @@ document.addEventListener("DOMContentLoaded", function () {
   let previousMousePosition = null;
 
   mapImage.style.transform = `translate(${translation.x}px, ${translation.y}px) scale(${scale})`;
+
+  const pinpoint1 = document.getElementById("pp1");
+  const pinpoint1Rect = pinpoint1.getBoundingClientRect();
+  const imageRect = mapImage.getBoundingClientRect();
+  const relativePP1Top = pinpoint1Rect.top - imageRect.top;
+  const relativePP1Left = pinpoint1Rect.left - imageRect.left;
 
   mapContainer.addEventListener("mousedown", (e) => {
     isDragging = true;
@@ -87,6 +106,8 @@ document.addEventListener("DOMContentLoaded", function () {
       translation.y = Math.min(0, Math.max(translation.y, mapContainer.clientHeight - mapImage.clientHeight * scale));
 
       mapImage.style.transform = `translate(${translation.x}px, ${translation.y}px) scale(${scale})`;
+      
+      pinpoint1.style.transform = `translate(${translation.x}px, ${translation.y}px) scale(${1})`;
 
       previousMousePosition = { x: e.clientX, y: e.clientY };
     }
@@ -102,5 +123,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const scaleFactor = 1.1;
     scale = e.deltaY < 0 ? scale * scaleFactor : scale / scaleFactor;
     mapImage.style.transform = `translate(${translation.x}px, ${translation.y}px) scale(${scale})`;
+
+    const newPP1Top = relativePP1Top * scale;
+    const newPP1Left = relativePP1Left * scale;
+    pinpoint1.style.top = `${newPP1Top}px`;
+    pinpoint1.style.left = `${newPP1Left}px`;
   });
 });

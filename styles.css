@@ -61,17 +61,17 @@ a {
   height: 100vh; /* 전체 화면 높이 */
   overflow-y: scroll; /* 수직 스크롤 활성화 */
   background-color: #f0f8ff; /* 배경색 설정 */
-  padding: 1.5rem; /* 적절한 패딩 적용 */
+  padding: 0.75rem; /* 적절한 패딩 적용 */
 }
 
 .category-box {
-  width: 84%;
+  width: 92%;
 }
 .category-box ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 100%;
+  width: 92%;
 }
 .category-box ul li {
   background-color: white;
@@ -123,3 +123,15 @@ a {
   position: absolute;
   transform-origin: top left;
 }
+
+.pinpoint {
+  position: absolute;
+  color: red;
+  font-size: 1.5rem;
+}
+.pinpoint p {
+  margin: 0;
+  padding: 0;
+}
+
+#pp1 {top: 390px; left: 290px;}
