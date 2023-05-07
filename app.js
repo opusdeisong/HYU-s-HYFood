@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
       translation.y += dy;
       mapImage.style.transform = `translate(${translation.x}px, ${translation.y}px) scale(${scale})`;
       
-      pinpoint1.style.transform = `translate(${translation.x}px, ${translation.y}px) scale(${1})`;
+      pinpoint1.style.transform = `translate(${translation.x}px, ${translation.y}px) scale(${scale})`;
 
       previousMousePosition = { x: e.clientX, y: e.clientY };
     }
@@ -67,6 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
       scale = 0.6;
     }
     mapImage.style.transform = `translate(${translation.x}px, ${translation.y}px) scale(${scale})`;
+    pinpoint1.style.transform = `translate(${translation.x}px, ${translation.y}px) scale(${scale})`;
 
     const newPP1Top = relativePP1Top * scale;
     const newPP1Left = relativePP1Left * scale;
@@ -113,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       mapImage.style.transform = `translate(${translation.x}px, ${translation.y}px) scale(${scale})`;
       
-      pinpoint1.style.transform = `translate(${translation.x}px, ${translation.y}px) scale(${1})`;
+      pinpoint1.style.transform = `translate(${translation.x}px, ${translation.y}px) scale(${scale})`;
 
       previousMousePosition = { x: e.clientX, y: e.clientY };
     }
@@ -135,6 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
       scale = 0.6;
     }
     mapImage.style.transform = `translate(${translation.x}px, ${translation.y}px) scale(${scale})`;
+    pinpoint1.style.transform = `translate(${translation.x}px, ${translation.y}px) scale(${scale})`;
 
     const newPP1Top = relativePP1Top * scale;
     const newPP1Left = relativePP1Left * scale;
