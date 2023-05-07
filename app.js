@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const relativePP1Top = pinpoint1Rect.top - imageRect.top;
   const relativePP1Left = pinpoint1Rect.left - imageRect.left;
 
-  let scale = 1;
+  let scale = 0.75;
   let translation = { x: 0, y: 0 };
   let isDragging = false;
   let previousMousePosition = null;
@@ -60,6 +60,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const scaleFactor = 1.1;
     scale = e.deltaY < 0 ? scale * scaleFactor : scale / scaleFactor;
+    if (scale > 1.1) {
+      scale = 1.1;
+    }
+    if (scale < 0.6) {
+      scale = 0.6;
+    }
     mapImage.style.transform = `translate(${translation.x}px, ${translation.y}px) scale(${scale})`;
 
     const newPP1Top = relativePP1Top * scale;
@@ -75,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const mapImage = document.getElementById("map-image");
   const mapContainer = document.getElementById("map-container");
 
-  let scale = 1;
+  let scale = 0.75;
   let translation = { x: 0, y: 0 };
   let isDragging = false;
   let previousMousePosition = null;
@@ -122,6 +128,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const scaleFactor = 1.1;
     scale = e.deltaY < 0 ? scale * scaleFactor : scale / scaleFactor;
+    if (scale > 1.1) {
+      scale = 1.1;
+    }
+    if (scale < 0.6) {
+      scale = 0.6;
+    }
     mapImage.style.transform = `translate(${translation.x}px, ${translation.y}px) scale(${scale})`;
 
     const newPP1Top = relativePP1Top * scale;
