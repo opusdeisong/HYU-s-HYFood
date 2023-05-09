@@ -119,7 +119,13 @@ a {
   height: 100%;
 }
 
-#map-image {
+/* #map-image {
   position: absolute;
   transform-origin: top left;
+} */
+
+#map {
+  height: 80%;
+  width: 100%;
+  margin: 0 auto;
 }
