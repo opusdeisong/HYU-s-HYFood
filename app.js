@@ -116,7 +116,7 @@ function initMap() {
 
   // map options
   var options = {
-    zoom: 17.2,
+    zoom: 17.3,
     center: {lat:37.5600, lng:127.0400} // 세로, 가로
   }
 
@@ -130,8 +130,23 @@ function initMap() {
       iconImage:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
       content: '<h1>WangSimNi Station</h1>'
     },
-    {coords:{lat:37.5572, lng:127.0454}}, // 한양대학교
-    {coords:{lat:37.5590, lng:127.0400}} // 그 사이
+    {coords:{lat:37.5572, lng:127.0454},}, // 한양대학교
+    // {coords:{lat:37.5590, lng:127.0400}}, // 그 사이
+    {
+      coords:{lat:37.5600, lng:127.0396},
+      content: "뒷돈산",
+      title: "kmarker1"
+    }, // 뒷돈산
+    {
+      coords:{lat:37.5586, lng:127.0402},
+      content: "멘푸라",
+      title: "kmarker2"
+    }, // 멘푸라
+    {
+      coords:{lat:37.5605, lng:127.0406},
+      content: "칠구네 신림동백순대",
+      title: "kmarker3"
+    } // 칠구네 신림동백순대
   ];
 
   // loop through markers
@@ -146,6 +161,7 @@ function initMap() {
         position:props.coords,
         map:map,
         //icon: props.iconImage
+        title: props.title
     });
 
     // check for custom icon
@@ -163,5 +179,55 @@ function initMap() {
     }
   }
 
+  document.getElementById("korRes1btn").addEventListener("click", function() {
+    // Center the map on the marker's position and open the info window
+    const markerData = markers.find((m) => m.title === "kmarker1");
+    if (markerData) {
+      const marker = new google.maps.Marker({
+        position: markerData.coords,
+        map:map,
+        title: markerData.title
+      });
+      map.panTo(marker.getPosition());
+      var infowindow = new google.maps.InfoWindow({
+        content: markerData.content,
+      });
+      infowindow.open(map, marker);
+    }
+  });
+
+  document.getElementById("korRes2btn").addEventListener("click", function() {
+    // Center the map on the marker's position and open the info window
+    const markerData = markers.find((m) => m.title === "kmarker2");
+    if (markerData) {
+      const marker = new google.maps.Marker({
+        position: markerData.coords,
+        map:map,
+        title: markerData.title
+      });
+      map.panTo(marker.getPosition());
+      var infowindow = new google.maps.InfoWindow({
+        content: markerData.content,
+      });
+      infowindow.open(map, marker);
+    }
+  });
+
+  document.getElementById("korRes3btn").addEventListener("click", function() {
+    // Center the map on the marker's position and open the info window
+    const markerData = markers.find((m) => m.title === "kmarker3");
+    if (markerData) {
+      const marker = new google.maps.Marker({
+        position: markerData.coords,
+        map:map,
+        title: markerData.title
+      });
+      map.panTo(marker.getPosition());
+      var infowindow = new google.maps.InfoWindow({
+        content: markerData.content,
+      });
+      infowindow.open(map, marker);
+    }
+  });
 
 }
