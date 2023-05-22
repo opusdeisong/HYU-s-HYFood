@@ -140,7 +140,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function initMap() {
+  var mapStyles = [
+    {
+      featureType: "poi",
+      elementType: "labels",
+      stylers:[{visibility: "off"}]
+    }
+  ];
 
+  var options = {
+    zoom: 17.3,
+    center: {lat:37.5600, lng:127.0400}, // 세로, 가로
+    styles: mapStyles
+  }
   // map options
   var options = {
     zoom: 17.3,
