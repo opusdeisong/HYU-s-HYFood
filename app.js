@@ -40,106 +40,14 @@ document.addEventListener("DOMContentLoaded", function () {
   bbqCategoryButtonElement.addEventListener('click', function(){displayList('bbq-category-box')})
   cafeCategoryButtonElement.addEventListener('click', function(){displayList('cafe-category-box')})
 
-  // const mapImage = document.getElementById("map-image");
-  // const mapContainer = document.getElementById("map-container");
-
-  // let scale = 1;
-  // let translation = { x: 0, y: 0 };
-  // let isDragging = false;
-  // let previousMousePosition = null;
-
-  // mapImage.style.transform = `translate(${translation.x}px, ${translation.y}px) scale(${scale})`;
-  // mapImage.addEventListener("dragstart", (e) => {
-  //   // 이벤트의 기본 동작을 막습니다.
-  //   e.preventDefault();
-  // });
-  // mapContainer.addEventListener("mousedown", (e) => {
-  //   isDragging = true;
-  //   previousMousePosition = { x: e.clientX, y: e.clientY };
-  // });
-
-  // mapContainer.addEventListener("mousemove", (e) => {
-  //   if (isDragging) {
-  //     const dx = e.clientX - previousMousePosition.x;
-  //     const dy = e.clientY - previousMousePosition.y;
-
-  //     translation.x += dx;
-  //     translation.y += dy;
-  //     mapImage.style.transform = `translate(${translation.x}px, ${translation.y}px) scale(${scale})`;
-
-  //     previousMousePosition = { x: e.clientX, y: e.clientY };
-  //   }
-  // });
-
-  // mapContainer.addEventListener("mouseup", () => {
-  //   isDragging = false;
-  // });
-
-  // mapContainer.addEventListener("wheel", (e) => {
-  //   e.preventDefault();
-
-  //   const scaleFactor = 1.1;
-  //   scale = e.deltaY < 0 ? scale * scaleFactor : scale / scaleFactor;
-  //   mapImage.style.transform = `translate(${translation.x}px, ${translation.y}px) scale(${scale})`;
-  // });
 });
 
 
 
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   // 이전 스크립트 내용은 동일하게 유지됩니다.
-
-//   // 지도 확대/축소 및 드래그 기능
-//   const mapImage = document.getElementById("map-image");
-//   const mapContainer = document.getElementById("map-container");
-
-//   let scale = 1;
-//   let translation = { x: 0, y: 0 };
-//   let isDragging = false;
-//   let previousMousePosition = null;
-
-//   mapImage.style.transform = `translate(${translation.x}px, ${translation.y}px) scale(${scale})`;
-
-//   mapContainer.addEventListener("mousedown", (e) => {
-//     isDragging = true;
-//     previousMousePosition = { x: e.clientX, y: e.clientY };
-//   });
-
-//   mapContainer.addEventListener("mousemove", (e) => {
-//     if (isDragging) {
-//       const dx = e.clientX - previousMousePosition.x;
-//       const dy = e.clientY - previousMousePosition.y;
-
-//       translation.x += dx;
-//       translation.y += dy;
-
-//       // 지도 이미지가 지정된 범위 내에서만 드래그할 수 있도록 제한
-//       translation.x = Math.min(0, Math.max(translation.x, mapContainer.clientWidth - mapImage.clientWidth * scale));
-//       translation.y = Math.min(0, Math.max(translation.y, mapContainer.clientHeight - mapImage.clientHeight * scale));
-
-//       mapImage.style.transform = `translate(${translation.x}px, ${translation.y}px) scale(${scale})`;
-
-//       previousMousePosition = { x: e.clientX, y: e.clientY };
-//     }
-//   });
-
-//   mapContainer.addEventListener("mouseup", () => {
-//     isDragging = false;
-//   });
-
-//   mapContainer.addEventListener("wheel", (e) => {
-//     e.preventDefault();
-
-//     const scaleFactor = 1.1;
-//     scale = e.deltaY < 0 ? scale * scaleFactor : scale / scaleFactor;
-//     mapImage.style.transform = `translate(${translation.x}px, ${translation.y}px) scale(${scale})`;
-//   });
-// });
-
-
 
 function initMap() {
+
   var mapStyles = [
     {
       featureType: "poi",
@@ -148,44 +56,88 @@ function initMap() {
     }
   ];
 
+  // map options
   var options = {
     zoom: 17.3,
     center: {lat:37.5600, lng:127.0400}, // 세로, 가로
     styles: mapStyles
   }
-  // map options
-  var options = {
-    zoom: 17.3,
-    center: {lat:37.5600, lng:127.0400} // 세로, 가로
-  }
+  
+
 
   // new map
   var map = new google.maps.Map(document.getElementById('map'), options);
 
   // array of markers
   var markers = [
-    { // 왕십리역
-      coords:{lat:37.5619, lng:127.0385},
-      iconImage:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
-      content: '<h1>WangSimNi Station</h1>'
-    },
-    {coords:{lat:37.5572, lng:127.0454},}, // 한양대학교
-    // {coords:{lat:37.5590, lng:127.0400}}, // 그 사이
-    {
-      coords:{lat:37.5600, lng:127.0396},
-      content: "뒷돈산",
-      title: "kmarker1"
-    }, // 뒷돈산
-    {
-      coords:{lat:37.5586, lng:127.0402},
-      content: "멘푸라",
-      title: "kmarker2"
-    }, // 멘푸라
     {
       coords:{lat:37.5605, lng:127.0406},
-      content: "칠구네 신림동백순대",
-      title: "kmarker3"
-    } // 칠구네 신림동백순대
+      name: "칠구네 신림동백순대"
+    },
+    {
+      coords: {lat:37.5585, lng:127.0399},
+      name: "이돈집"
+    },
+    {
+      coords: {lat:37.5586, lng:127.0405},
+      name: "더진국수육국밥"
+    },
+    {
+      coords: {lat:37.5585, lng:127.0396},
+      name: "베네토피자앤펍"
+    },
+    {
+      coords: {lat:37.5607, lng:127.0398},
+      name: "봄의정원"
+    },
+    {
+      coords: {lat:37.5593, lng:127.0399}, // 세로, 가로
+      name: "용용선생"
+    },
+    {
+      coords: {lat:37.5597, lng:127.0409},
+      name: "금룡"
+    },
+    {
+      coords: {lat:37.55855, lng:127.04015},
+      name: "마쿠"
+    },
+    {
+      coords: {lat:37.55855, lng:127.03945}, // 세로, 가로
+      name: "히토리 우동"
+    },
+    {
+      coords: {lat:37.5587, lng:127.0398}, // 세로, 가로
+      name: "하쿠나마타타"
+    },
+    {
+      coords:{lat:37.5586, lng:127.0401},
+      name: "멘푸라"
+    },
+    {
+      coords:{lat:37.5600, lng:127.0396},
+      name: "뒷돈산"
+    },
+    {
+      coords: {lat:37.5591, lng:127.0403}, // 세로, 가로
+      name: "장모족발"
+    },
+    {
+      coords: {lat:37.5587, lng:127.0406},
+      name: "설빙"
+    },
+    {
+      coords: {lat:37.56025, lng:127.0406},
+      name: "짙은"
+    },
+    {
+      coords: {lat:37.5613, lng:127.03955},
+      name: "어질 인"
+    },
+    {
+      coords: {lat:37.5602, lng:127.03945},
+      name: "띵똥와플"
+    },
   ];
 
   // loop through markers
@@ -198,9 +150,7 @@ function initMap() {
   function addMarker(props) {
     var marker = new google.maps.Marker({
         position:props.coords,
-        map:map,
-        //icon: props.iconImage
-        title: props.title
+        map:map
     });
 
     // check for custom icon
