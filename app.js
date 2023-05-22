@@ -146,26 +146,27 @@ function initMap() {
     addMarker(markers[i]);
   }
 
+  var infowindow = null;
+  var timeoutID = null;
+
   // add marker function
   function addMarker(props) {
     var marker = new google.maps.Marker({
         position:props.coords,
-        map:map
+        map:map,
     });
 
-    // check for custom icon
-    if(props.iconImage) {
-        marker.setIcon(props.iconImage); // set icon
-    }
-    if (props.content) {
-        var infoWindow = new google.maps.InfoWindow({
-            content: props.content
-        });
-
-        marker.addListener('click', function() {
-            infoWindow.open(map, marker);
-        });
-    }
+    marker.addListener('click', function() {
+      if(infowindow) {
+        infowindow.close();
+        clearTimeout(timeoutID);
+      }
+      infowindow = new google.maps.InfoWindow({
+        content: props.name
+      });
+      infowindow.open(map, marker); // 마커 누르면 윈도우 생성
+      timeoutID = setTimeout(function(){infowindow.close();}, '3000'); // 3초 뒤 윈도우 닫음
+    });
   }
 
   document.getElementById("korRes1btn").addEventListener("click", function() {
