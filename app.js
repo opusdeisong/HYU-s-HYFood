@@ -169,55 +169,145 @@ function initMap() {
     });
   }
 
-  document.getElementById("korRes1btn").addEventListener("click", function() {
-    // Center the map on the marker's position and open the info window
-    const markerData = markers.find((m) => m.title === "kmarker1");
-    if (markerData) {
-      const marker = new google.maps.Marker({
-        position: markerData.coords,
-        map:map,
-        title: markerData.title
-      });
-      map.panTo(marker.getPosition());
-      var infowindow = new google.maps.InfoWindow({
-        content: markerData.content,
-      });
-      infowindow.open(map, marker);
-    }
-  });
+  const korResButtons = [{ID:'korRes1btn', mIndex: 0}, {ID: 'korRes2btn', mIndex: 1}, {ID: 'korRes3btn', mIndex:2}];
+  const wesResButtons = [{ID:'wesRes1btn', mIndex: 3}, {ID:'wesRes2btn', mIndex: 4}];
+  const chResButtons = [{ID:'chRes1btn', mIndex: 5}, {ID:'chRes2btn', mIndex: 6}, {ID:'chRes3btn', mIndex: 7}];
+  const jpResButtons = [{ID:'jpRes1btn', mIndex: 8}, {ID:'jpRes2btn', mIndex: 9}, {ID:'jpRes3btn', mIndex: 10}];
+  const bbqResButtons = [{ID:'bbqRes1btn', mIndex: 11}, {ID:'bbqRes2btn', mIndex: 12}];
+  const cafeResButtons = [{ID:'cafeRes1btn', mIndex: 13}, {ID:'cafeRes2btn', mIndex: 14}, {ID:'cafeRes3btn', mIndex: 15}, {ID:'cafeRes4btn', mIndex: 16}];
 
-  document.getElementById("korRes2btn").addEventListener("click", function() {
-    // Center the map on the marker's position and open the info window
-    const markerData = markers.find((m) => m.title === "kmarker2");
-    if (markerData) {
+  for (i = 0; i < korResButtons.length; i++) {
+    const thisResButton = document.getElementById(korResButtons[i].ID);
+    const thisResMarker = markers[korResButtons[i].mIndex];
+    thisResButton.addEventListener('click', function() {
+      // 지금 열려 있는 info window 다 지워
+      if (infowindow) {
+        infowindow.close();
+      }
+      // 지금 클릭된 식당의 마커 포커스, info window open
       const marker = new google.maps.Marker({
-        position: markerData.coords,
+        position: thisResMarker.coords,
         map:map,
-        title: markerData.title
       });
       map.panTo(marker.getPosition());
-      var infowindow = new google.maps.InfoWindow({
-        content: markerData.content,
+      map.setZoom(18.2); // focus 하면 줌 조금 더 당겨
+      infowindow = new google.maps.InfoWindow({
+        content: thisResMarker.name,
       });
       infowindow.open(map, marker);
-    }
-  });
+    })
+  }
 
-  document.getElementById("korRes3btn").addEventListener("click", function() {
-    // Center the map on the marker's position and open the info window
-    const markerData = markers.find((m) => m.title === "kmarker3");
-    if (markerData) {
+  for (i = 0; i < wesResButtons.length; i++) {
+    const thisResButton = document.getElementById(wesResButtons[i].ID);
+    const thisResMarker = markers[wesResButtons[i].mIndex];
+    thisResButton.addEventListener('click', function() {
+      // 지금 열려 있는 info window 다 지워
+      if (infowindow) {
+        infowindow.close();
+      }
+      // 지금 클릭된 식당의 마커 포커스, info window open
       const marker = new google.maps.Marker({
-        position: markerData.coords,
+        position: thisResMarker.coords,
         map:map,
-        title: markerData.title
       });
       map.panTo(marker.getPosition());
-      var infowindow = new google.maps.InfoWindow({
-        content: markerData.content,
+      map.setZoom(18.2);
+      infowindow = new google.maps.InfoWindow({
+        content: thisResMarker.name,
       });
       infowindow.open(map, marker);
-    }
-  });
+    })
+  }
+
+  for (i = 0; i < chResButtons.length; i++) {
+    const thisResButton = document.getElementById(chResButtons[i].ID);
+    const thisResMarker = markers[chResButtons[i].mIndex];
+    thisResButton.addEventListener('click', function() {
+      // 지금 열려 있는 info window 다 지워
+      if (infowindow) {
+        infowindow.close();
+      }
+      // 지금 클릭된 식당의 마커 포커스, info window open
+      const marker = new google.maps.Marker({
+        position: thisResMarker.coords,
+        map:map,
+      });
+      map.panTo(marker.getPosition());
+      map.setZoom(18.2);
+      infowindow = new google.maps.InfoWindow({
+        content: thisResMarker.name,
+      });
+      infowindow.open(map, marker);
+    })
+  }
+
+  for (i = 0; i < jpResButtons.length; i++) {
+    const thisResButton = document.getElementById(jpResButtons[i].ID);
+    const thisResMarker = markers[jpResButtons[i].mIndex];
+    thisResButton.addEventListener('click', function() {
+      // 지금 열려 있는 info window 다 지워
+      if (infowindow) {
+        infowindow.close();
+      }
+      // 지금 클릭된 식당의 마커 포커스, info window open
+      const marker = new google.maps.Marker({
+        position: thisResMarker.coords,
+        map:map,
+      });
+      map.panTo(marker.getPosition());
+      map.setZoom(18.2);
+      infowindow = new google.maps.InfoWindow({
+        content: thisResMarker.name,
+      });
+      infowindow.open(map, marker);
+    })
+  }
+
+  for (i = 0; i < bbqResButtons.length; i++) {
+    const thisResButton = document.getElementById(bbqResButtons[i].ID);
+    const thisResMarker = markers[bbqResButtons[i].mIndex];
+    thisResButton.addEventListener('click', function() {
+      // 지금 열려 있는 info window 다 지워
+      if (infowindow) {
+        infowindow.close();
+      }
+      // 지금 클릭된 식당의 마커 포커스, info window open
+      const marker = new google.maps.Marker({
+        position: thisResMarker.coords,
+        map:map,
+      });
+      map.panTo(marker.getPosition());
+      map.setZoom(18.2);
+      infowindow = new google.maps.InfoWindow({
+        content: thisResMarker.name,
+      });
+      infowindow.open(map, marker);
+    })
+  }
+
+  for (i = 0; i < cafeResButtons.length; i++) {
+    const thisResButton = document.getElementById(cafeResButtons[i].ID);
+    const thisResMarker = markers[cafeResButtons[i].mIndex];
+    thisResButton.addEventListener('click', function() {
+      // 지금 열려 있는 info window 다 지워
+      if (infowindow) {
+        infowindow.close();
+      }
+      // 지금 클릭된 식당의 마커 포커스, info window open
+      const marker = new google.maps.Marker({
+        position: thisResMarker.coords,
+        map:map,
+      });
+      map.panTo(marker.getPosition());
+      map.setZoom(18.2);
+      infowindow = new google.maps.InfoWindow({
+        content: thisResMarker.name,
+      });
+      infowindow.open(map, marker);
+    })
+  }
+
+  
 
 }
