@@ -57,30 +57,30 @@ a {
   flex-wrap: nowrap; /* 추가 */
 }
 .left-scrollable {
-  width: 300px; /* 수정된 너비 비율 설정 */
-  height: 100vh; /* 전체 화면 높이 */
-  overflow-y: scroll; /* 수직 스크롤 활성화 */
-  background-color: #f0f8ff; /* 배경색 설정 */
-  padding: 1.5rem; /* 적절한 패딩 적용 */
+  width: 32vw; /* commit 3 */
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: #f0f8ff;
+  padding: 2vw; /* commit 3 */
 }
 
-.category-box {
-  width: 84%;
+.category-box-list {
+  width: 26vw; /* commit 3 */
 }
-.category-box ul {
+.category-box-list ul {
   list-style: none;
   padding: 0;
   margin: 0;
   width: 100%;
 }
-.category-box ul li {
+.category-box-list ul li {
   background-color: white;
   border-radius: 6px;
-  padding: 1rem;
+  padding: 1vw; /* commit 3 */
   margin: 1rem 0;
   width: 100%;
 }
-.category-box button {
+.category-box-list button {
   border: none;
   background-color: transparent;
   padding: 0;
@@ -91,19 +91,16 @@ a {
   display: flex;
   justify-content: space-between;
   margin: 0.5rem 0 1rem 0;
+  height: 100px; /* commit 3 */
 }
-.restaurant-img img{
+.restaurant-img img {
   width: 45%;
-}
-.category-box p {
-  margin: 0.5rem 0;
+  object-fit: cover; /* commit 3 */
 }
 
 .res-info {
   width: 45%;
 }
-
-
 
 .label {
   font-size: 0.8rem;
@@ -120,12 +117,9 @@ a {
   margin: 1rem 0;
 }
 
-
 .blockDisplayNone {
   display: none;
 }
-
-
 
 .image-container {
   width: 100vw; /* 수정된 너비 비율 설정 */
