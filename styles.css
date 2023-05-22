@@ -99,7 +99,31 @@ a {
   margin: 0.5rem 0;
 }
 
+.res-info {
+  width: 45%;
+}
 
+
+
+.label {
+  font-size: 0.8rem;
+  font-family: sans-serif;
+  color: rgb(83, 83, 83);
+  margin: 0;
+}
+.label-info {
+  font-family: sans-serif;
+  margin: 0 0 0.5rem 0;
+}
+.resExplaination {
+  font-family: sans-serif;
+  margin: 1rem 0;
+}
+
+
+.blockDisplayNone {
+  display: none;
+}
 
 
 
