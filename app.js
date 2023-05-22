@@ -13,6 +13,33 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+
+  const koreanCategoryButtonElement = document.getElementById('korean-button');
+  const westernCategoryButtonElement = document.getElementById('western-button');
+  const chineseCategoryButtonElement = document.getElementById('chinese-button');
+  const japaneseCategoryButtonElement = document.getElementById('japanese-button');
+  const bbqCategoryButtonElement = document.getElementById('bbq-button');
+  const cafeCategoryButtonElement = document.getElementById('cafe-button');
+  
+  const allCategoryBoxElements = document.querySelectorAll('.category-box-list .category-box');
+  
+  function displayList(thisListID) {
+      const blankCategoryBox = document.getElementById('blank-category-box');
+      const thisCategoryBox = document.getElementById(thisListID);
+      blankCategoryBox.classList.add('blockDisplayNone');
+      for (const categoryBoxElement of allCategoryBoxElements) {
+          categoryBoxElement.classList.add('blockDisplayNone');
+      }
+      thisCategoryBox.classList.remove('blockDisplayNone');
+  }
+  
+  koreanCategoryButtonElement.addEventListener('click', function(){displayList('korean-category-box')})
+  westernCategoryButtonElement.addEventListener('click', function(){displayList('western-category-box')})
+  chineseCategoryButtonElement.addEventListener('click', function(){displayList('chinese-category-box')})
+  japaneseCategoryButtonElement.addEventListener('click', function(){displayList('japanese-category-box')})
+  bbqCategoryButtonElement.addEventListener('click', function(){displayList('bbq-category-box')})
+  cafeCategoryButtonElement.addEventListener('click', function(){displayList('cafe-category-box')})
+
   // const mapImage = document.getElementById("map-image");
   // const mapContainer = document.getElementById("map-container");
 
