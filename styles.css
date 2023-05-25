@@ -29,7 +29,7 @@ a {
   background-color: rgb(0, 100, 255);
   display: flex;
   justify-content: space-around;
-  padding: 10px 0;
+  padding: 0.5rem 0;
 }
 #category-bar.fixed {
   position: fixed;
@@ -38,34 +38,57 @@ a {
   z-index: 100;
 }
 #category-bar-buttons {
-  margin-left: 10%;
+  margin-left: 350px;
 }
 #category-bar-buttons button {
   font: inherit;
-  font-size: large;
+  font-size: 1.2rem;
   font-weight: 600;
   cursor: pointer;
   background-color: transparent;
-  color: white;
-  padding: 0 0.5rem;
-  margin: 0.5rem 2rem;
+  /* color: white; */
+  width: 6rem;
+  margin: 0.3rem 0;
   border: 0;
 }
+#korean-button {
+  color: rgb(255, 142, 142) ;
+}
+#western-button {
+  color: rgb(255, 255, 86);
+}
+#chinese-button {
+  color: rgb(131, 255, 255);
+}
+#japanese-button {
+  color: rgb(255, 188, 65);
+}
+#bbq-button {
+  color: lightpink;
+}
+#cafe-button {
+  color: rgb(219, 135, 252) ;
+}
+
+
+
+
 
 .content-wrapper {
   display: flex;
   flex-wrap: nowrap; /* 추가 */
+  height: calc(100vh - 8rem);
 }
 .left-scrollable {
-  width: 32vw; /* commit 3 */
-  height: 100vh;
+  width: 350px; /* commit 3 */
+  height: calc(100% - 3rem);
   overflow-y: scroll;
   background-color: #f0f8ff;
-  padding: 2vw; /* commit 3 */
+  padding: 1.5rem; /* commit 3 */
 }
 
 .category-box-list {
-  width: 26vw; /* commit 3 */
+  width: 296px; /* commit 3 */
 }
 .category-box-list ul {
   list-style: none;
@@ -76,7 +99,7 @@ a {
 .category-box-list ul li {
   background-color: white;
   border-radius: 6px;
-  padding: 1vw; /* commit 3 */
+  padding: 1rem; /* commit 3 */
   margin: 1rem 0;
   width: 100%;
 }
@@ -122,8 +145,8 @@ a {
 }
 
 .image-container {
-  width: 70vw; /* 수정된 너비 비율 설정 */
-  height: 100vh;
+  width: calc(98vw - 350px); /* 수정된 너비 비율 설정 */
+  height: 100%;
   display: flex; /* 추가 */
   justify-content: center; /* 추가 */
   align-items: center; /* 추가 */
@@ -143,7 +166,7 @@ a {
 } */
 
 #map {
-  height: 80%;
+  height: 100%;
   width: 100%;
   margin: 0 auto;
 }

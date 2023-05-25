@@ -12,35 +12,34 @@ document.addEventListener("DOMContentLoaded", function () {
       navbar.classList.remove("fixed");
     }
   });
-
-
-  const koreanCategoryButtonElement = document.getElementById('korean-button');
-  const westernCategoryButtonElement = document.getElementById('western-button');
-  const chineseCategoryButtonElement = document.getElementById('chinese-button');
-  const japaneseCategoryButtonElement = document.getElementById('japanese-button');
-  const bbqCategoryButtonElement = document.getElementById('bbq-button');
-  const cafeCategoryButtonElement = document.getElementById('cafe-button');
   
-  const allCategoryBoxElements = document.querySelectorAll('.category-box-list .category-box');
-  
-  function displayList(thisListID) {
-      const blankCategoryBox = document.getElementById('blank-category-box');
-      const thisCategoryBox = document.getElementById(thisListID);
-      blankCategoryBox.classList.add('blockDisplayNone');
-      for (const categoryBoxElement of allCategoryBoxElements) {
-          categoryBoxElement.classList.add('blockDisplayNone');
-      }
-      thisCategoryBox.classList.remove('blockDisplayNone');
-  }
-  
-  koreanCategoryButtonElement.addEventListener('click', function(){displayList('korean-category-box')})
-  westernCategoryButtonElement.addEventListener('click', function(){displayList('western-category-box')})
-  chineseCategoryButtonElement.addEventListener('click', function(){displayList('chinese-category-box')})
-  japaneseCategoryButtonElement.addEventListener('click', function(){displayList('japanese-category-box')})
-  bbqCategoryButtonElement.addEventListener('click', function(){displayList('bbq-category-box')})
-  cafeCategoryButtonElement.addEventListener('click', function(){displayList('cafe-category-box')})
-
 });
+
+const koreanCategoryButtonElement = document.getElementById('korean-button');
+const westernCategoryButtonElement = document.getElementById('western-button');
+const chineseCategoryButtonElement = document.getElementById('chinese-button');
+const japaneseCategoryButtonElement = document.getElementById('japanese-button');
+const bbqCategoryButtonElement = document.getElementById('bbq-button');
+const cafeCategoryButtonElement = document.getElementById('cafe-button');
+
+const allCategoryBoxElements = document.querySelectorAll('.category-box-list .category-box');
+
+function displayList(thisListID) {
+    // const blankCategoryBox = document.getElementById('blank-category-box');
+    const thisCategoryBox = document.getElementById(thisListID);
+    // blankCategoryBox.classList.add('blockDisplayNone');
+    for (const categoryBoxElement of allCategoryBoxElements) {
+        categoryBoxElement.classList.add('blockDisplayNone');
+    }
+    thisCategoryBox.classList.remove('blockDisplayNone');
+}
+
+koreanCategoryButtonElement.addEventListener('click', function(){displayList('korean-category-box')})
+westernCategoryButtonElement.addEventListener('click', function(){displayList('western-category-box')})
+chineseCategoryButtonElement.addEventListener('click', function(){displayList('chinese-category-box')})
+japaneseCategoryButtonElement.addEventListener('click', function(){displayList('japanese-category-box')})
+bbqCategoryButtonElement.addEventListener('click', function(){displayList('bbq-category-box')})
+cafeCategoryButtonElement.addEventListener('click', function(){displayList('cafe-category-box')})
 
 
 
@@ -72,71 +71,105 @@ function initMap() {
   var markers = [
     {
       coords:{lat:37.5605, lng:127.0406},
-      name: "칠구네 신림동백순대"
+      name: "칠구네 신림동백순대",
+      icon: "http://maps.google.com/mapfiles/ms/micons/red-dot.png",
+      category: "korean"
     },
     {
       coords: {lat:37.5585, lng:127.0399},
-      name: "이돈집"
+      name: "이돈집",
+      icon: "http://maps.google.com/mapfiles/ms/micons/red-dot.png",
+      category: "korean"
     },
     {
       coords: {lat:37.5586, lng:127.0405},
-      name: "더진국수육국밥"
+      name: "더진국수육국밥",
+      icon: "http://maps.google.com/mapfiles/ms/micons/red-dot.png",
+      category: "korean"
     },
     {
       coords: {lat:37.5585, lng:127.0396},
-      name: "베네토피자앤펍"
+      name: "베네토피자앤펍",
+      icon: "http://maps.google.com/mapfiles/ms/micons/yellow-dot.png",
+      category: "western"
     },
     {
       coords: {lat:37.5607, lng:127.0398},
-      name: "봄의정원"
+      name: "봄의정원",
+      icon: "http://maps.google.com/mapfiles/ms/micons/yellow-dot.png",
+      category: "western"
     },
     {
       coords: {lat:37.5593, lng:127.0399}, // 세로, 가로
-      name: "용용선생"
+      name: "용용선생",
+      icon: "http://maps.google.com/mapfiles/ms/micons/ltblue-dot.png",
+      category: "chinese"
     },
     {
       coords: {lat:37.5597, lng:127.0409},
-      name: "금룡"
+      name: "금룡",
+      icon: "http://maps.google.com/mapfiles/ms/micons/ltblue-dot.png",
+      category: "chinese"
     },
     {
       coords: {lat:37.55855, lng:127.04015},
-      name: "마쿠"
+      name: "마쿠",
+      icon: "http://maps.google.com/mapfiles/ms/micons/ltblue-dot.png",
+      category: "chinese"
     },
     {
       coords: {lat:37.55855, lng:127.03945}, // 세로, 가로
-      name: "히토리 우동"
+      name: "히토리 우동",
+      icon: "http://maps.google.com/mapfiles/ms/micons/orange-dot.png",
+      category: "japanese"
     },
     {
       coords: {lat:37.5587, lng:127.0398}, // 세로, 가로
-      name: "하쿠나마타타"
+      name: "하쿠나마타타",
+      icon: "http://maps.google.com/mapfiles/ms/micons/orange-dot.png",
+      category: "japanese"
     },
     {
       coords:{lat:37.5586, lng:127.0401},
-      name: "멘푸라"
+      name: "멘푸라",
+      icon: "http://maps.google.com/mapfiles/ms/micons/orange-dot.png",
+      category: "japanese"
     },
     {
       coords:{lat:37.5600, lng:127.0396},
-      name: "뒷돈산"
+      name: "뒷돈산",
+      icon: "http://maps.google.com/mapfiles/ms/micons/pink-dot.png",
+      category: "bbq"
     },
     {
       coords: {lat:37.5591, lng:127.0403}, // 세로, 가로
-      name: "장모족발"
+      name: "장모족발",
+      icon: "http://maps.google.com/mapfiles/ms/micons/pink-dot.png",
+      category: "bbq"
     },
     {
       coords: {lat:37.5587, lng:127.0406},
-      name: "설빙"
+      name: "설빙",
+      icon: "http://maps.google.com/mapfiles/ms/micons/purple-dot.png",
+      category: "cafe"
     },
     {
       coords: {lat:37.56025, lng:127.0406},
-      name: "짙은"
+      name: "짙은",
+      icon: "http://maps.google.com/mapfiles/ms/micons/purple-dot.png",
+      category: "cafe"
     },
     {
       coords: {lat:37.5613, lng:127.03955},
-      name: "어질 인"
+      name: "어질 인",
+      icon: "http://maps.google.com/mapfiles/ms/micons/purple-dot.png",
+      category: "cafe"
     },
     {
       coords: {lat:37.5602, lng:127.03945},
-      name: "띵똥와플"
+      name: "띵똥와플",
+      icon: "http://maps.google.com/mapfiles/ms/micons/purple-dot.png",
+      category: "cafe"
     },
   ];
 
@@ -149,14 +182,37 @@ function initMap() {
   var infowindow = null;
   var timeoutID = null;
 
+  function openCategory(category) {
+    if (category == "korean") {
+      displayList('korean-category-box');
+    }
+    if (category == "western") {
+      displayList('western-category-box');
+    }
+    if (category == "chinese") {
+      displayList('chinese-category-box');
+    }
+    if (category == "japanese") {
+      displayList('japanese-category-box');
+    }
+    if (category == "bbq") {
+      displayList('bbq-category-box');
+    }
+    if (category == "cafe") {
+      displayList('cafe-category-box');
+    }
+  }
+
   // add marker function
   function addMarker(props) {
     var marker = new google.maps.Marker({
         position:props.coords,
         map:map,
+        icon: props.icon
     });
 
     marker.addListener('click', function() {
+      
       if(infowindow) {
         infowindow.close();
         clearTimeout(timeoutID);
@@ -166,6 +222,7 @@ function initMap() {
       });
       infowindow.open(map, marker); // 마커 누르면 윈도우 생성
       timeoutID = setTimeout(function(){infowindow.close();}, '3000'); // 3초 뒤 윈도우 닫음
+      openCategory(props.category);
     });
   }
 
