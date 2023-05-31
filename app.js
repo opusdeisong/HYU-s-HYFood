@@ -339,6 +339,18 @@ function initMap() {
         content: thisResMarker.content,
       });
       infowindow.open(map, marker);
+
+      marker.addListener('click', function() {
+      
+        if(infowindow) {
+          infowindow.close();
+        }
+        infowindow = new google.maps.InfoWindow({
+          content: thisResMarker.content
+        });
+        infowindow.open(map, marker); // 마커 누르면 윈도우 생성
+        displayRes(thisResMarker.index); // 클릭된 식당 정보만 표시됨
+      });
     })
   }
 
