@@ -71,105 +71,122 @@ function initMap() {
   var markers = [
     {
       coords:{lat:37.5605, lng:127.0406},
-      name: "칠구네 신림동백순대",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>칠구네 신림동백순대</p> <img src='images/백순대.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/red-dot.png",
-      category: "korean"
+      category: "korean",
+      index: 0
     },
     {
       coords: {lat:37.5585, lng:127.0399},
-      name: "이돈집",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>이돈집</p> <img src='images/이돈집.png' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/red-dot.png",
-      category: "korean"
+      category: "korean",
+      index: 1
     },
     {
       coords: {lat:37.5586, lng:127.0405},
-      name: "더진국수육국밥",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>더진국수육국밥</p> <img src='images/더진국.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/red-dot.png",
-      category: "korean"
+      category: "korean",
+      index: 2
     },
     {
       coords: {lat:37.5585, lng:127.0396},
-      name: "베네토피자앤펍",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>베네토피자앤펍</p> <img src='images/veneto.png' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/yellow-dot.png",
-      category: "western"
+      category: "western",
+      index:3
     },
     {
       coords: {lat:37.5607, lng:127.0398},
-      name: "봄의정원",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>봄의정원</p> <img src='images/봄의정원.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/yellow-dot.png",
-      category: "western"
+      category: "western",
+      index:4
     },
     {
       coords: {lat:37.5593, lng:127.0399}, // 세로, 가로
-      name: "용용선생",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>용용선생</p> <img src='images/용용선생.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/ltblue-dot.png",
-      category: "chinese"
+      category: "chinese",
+      index:5
     },
     {
       coords: {lat:37.5597, lng:127.0409},
-      name: "금룡",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>금룡</p> <img src='images/금룡.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/ltblue-dot.png",
-      category: "chinese"
+      category: "chinese",
+      index:6
     },
     {
       coords: {lat:37.55855, lng:127.04015},
-      name: "마쿠",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>마쿠</p> <img src='images/maku.png' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/ltblue-dot.png",
-      category: "chinese"
+      category: "chinese",
+      index:7
     },
     {
       coords: {lat:37.55855, lng:127.03945}, // 세로, 가로
-      name: "히토리 우동",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>히토리 우동</p> <img src='images/hitori.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/orange-dot.png",
-      category: "japanese"
+      category: "japanese",
+      index:8
     },
     {
       coords: {lat:37.5587, lng:127.0398}, // 세로, 가로
-      name: "하쿠나마타타",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>하쿠나마타타</p> <img src='images/hakunamatata.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/orange-dot.png",
-      category: "japanese"
+      category: "japanese",
+      index:9
     },
     {
       coords:{lat:37.5586, lng:127.0401},
-      name: "멘푸라",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>멘푸라</p> <img src='images/menpura.png' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/orange-dot.png",
-      category: "japanese"
+      category: "japanese",
+      index:10
     },
     {
       coords:{lat:37.5600, lng:127.0396},
-      name: "뒷돈산",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>뒷돈산</p> <img src='images/뒷돈산.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/pink-dot.png",
-      category: "bbq"
+      category: "bbq",
+      index:11
     },
     {
       coords: {lat:37.5591, lng:127.0403}, // 세로, 가로
-      name: "장모족발",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>장모족발</p> <img src='images/장모족발.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/pink-dot.png",
-      category: "bbq"
+      category: "bbq",
+      index:12
     },
     {
       coords: {lat:37.5587, lng:127.0406},
-      name: "설빙",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>설빙</p> <img src='images/설빙.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/purple-dot.png",
-      category: "cafe"
+      category: "cafe",
+      index:13
     },
     {
       coords: {lat:37.56025, lng:127.0406},
-      name: "짙은",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>짙은</p> <img src='images/짙은.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/purple-dot.png",
-      category: "cafe"
+      category: "cafe",
+      index:14
     },
     {
       coords: {lat:37.5613, lng:127.03955},
-      name: "어질 인",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>어질 인</p> <img src='images/어질인.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/purple-dot.png",
-      category: "cafe"
+      category: "cafe",
+      index:15
     },
     {
       coords: {lat:37.5602, lng:127.03945},
-      name: "띵똥와플",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>띵똥와플</p> <img src='images/띵똥.png' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/purple-dot.png",
-      category: "cafe"
+      category: "cafe",
+      index:16
     },
   ];
 
@@ -182,25 +199,29 @@ function initMap() {
   var infowindow = null;
   var timeoutID = null;
 
-  function openCategory(category) {
-    if (category == "korean") {
-      displayList('korean-category-box');
-    }
-    if (category == "western") {
-      displayList('western-category-box');
-    }
-    if (category == "chinese") {
-      displayList('chinese-category-box');
-    }
-    if (category == "japanese") {
-      displayList('japanese-category-box');
-    }
-    if (category == "bbq") {
-      displayList('bbq-category-box');
-    }
-    if (category == "cafe") {
-      displayList('cafe-category-box');
-    }
+  // function openCategory(category) {
+  //   if (category == "korean") {
+  //     displayList('korean-category-box');
+  //   }
+  //   if (category == "western") {
+  //     displayList('western-category-box');
+  //   }
+  //   if (category == "chinese") {
+  //     displayList('chinese-category-box');
+  //   }
+  //   if (category == "japanese") {
+  //     displayList('japanese-category-box');
+  //   }
+  //   if (category == "bbq") {
+  //     displayList('bbq-category-box');
+  //   }
+  //   if (category == "cafe") {
+  //     displayList('cafe-category-box');
+  //   }
+  // }
+
+  function displayRes(index) {
+    thisRes = ResButtons[index]
   }
 
   // add marker function
@@ -208,7 +229,7 @@ function initMap() {
     var marker = new google.maps.Marker({
         position:props.coords,
         map:map,
-        icon: props.icon
+        // icon: props.icon
     });
 
     marker.addListener('click', function() {
@@ -222,20 +243,21 @@ function initMap() {
       });
       infowindow.open(map, marker); // 마커 누르면 윈도우 생성
       timeoutID = setTimeout(function(){infowindow.close();}, '3000'); // 3초 뒤 윈도우 닫음
-      openCategory(props.category);
+      // openCategory(props.category);
+      displayRes(props.index);
     });
   }
 
-  const korResButtons = [{ID:'korRes1btn', mIndex: 0}, {ID: 'korRes2btn', mIndex: 1}, {ID: 'korRes3btn', mIndex:2}];
-  const wesResButtons = [{ID:'wesRes1btn', mIndex: 3}, {ID:'wesRes2btn', mIndex: 4}];
-  const chResButtons = [{ID:'chRes1btn', mIndex: 5}, {ID:'chRes2btn', mIndex: 6}, {ID:'chRes3btn', mIndex: 7}];
-  const jpResButtons = [{ID:'jpRes1btn', mIndex: 8}, {ID:'jpRes2btn', mIndex: 9}, {ID:'jpRes3btn', mIndex: 10}];
-  const bbqResButtons = [{ID:'bbqRes1btn', mIndex: 11}, {ID:'bbqRes2btn', mIndex: 12}];
-  const cafeResButtons = [{ID:'cafeRes1btn', mIndex: 13}, {ID:'cafeRes2btn', mIndex: 14}, {ID:'cafeRes3btn', mIndex: 15}, {ID:'cafeRes4btn', mIndex: 16}];
+  const ResButtons = [{ID:'korRes1btn', mIndex: 0}, {ID: 'korRes2btn', mIndex: 1}, {ID: 'korRes3btn', mIndex:2}, 
+  {ID:'wesRes1btn', mIndex: 3}, {ID:'wesRes2btn', mIndex: 4},
+  {ID:'chRes1btn', mIndex: 5}, {ID:'chRes2btn', mIndex: 6}, {ID:'chRes3btn', mIndex: 7},
+  {ID:'jpRes1btn', mIndex: 8}, {ID:'jpRes2btn', mIndex: 9}, {ID:'jpRes3btn', mIndex: 10},
+  {ID:'bbqRes1btn', mIndex: 11}, {ID:'bbqRes2btn', mIndex: 12},
+  {ID:'cafeRes1btn', mIndex: 13}, {ID:'cafeRes2btn', mIndex: 14}, {ID:'cafeRes3btn', mIndex: 15}, {ID:'cafeRes4btn', mIndex: 16}];
 
-  for (i = 0; i < korResButtons.length; i++) {
-    const thisResButton = document.getElementById(korResButtons[i].ID);
-    const thisResMarker = markers[korResButtons[i].mIndex];
+  for (i = 0; i < ResButtons.length; i++) {
+    const thisResButton = document.getElementById(ResButtons[i].ID);
+    const thisResMarker = markers[ResButtons[i].mIndex];
     thisResButton.addEventListener('click', function() {
       // 지금 열려 있는 info window 다 지워
       if (infowindow) {
@@ -249,121 +271,143 @@ function initMap() {
       map.panTo(marker.getPosition());
       map.setZoom(18.2); // focus 하면 줌 조금 더 당겨
       infowindow = new google.maps.InfoWindow({
-        content: thisResMarker.name,
+        content: thisResMarker.content,
       });
       infowindow.open(map, marker);
     })
   }
+  
+  // for (i = 0; i < korResButtons.length; i++) {
+  //   const thisResButton = document.getElementById(korResButtons[i].ID);
+  //   const thisResMarker = markers[korResButtons[i].mIndex];
+  //   thisResButton.addEventListener('click', function() {
+  //     // 지금 열려 있는 info window 다 지워
+  //     if (infowindow) {
+  //       infowindow.close();
+  //     }
+  //     // 지금 클릭된 식당의 마커 포커스, info window open
+  //     const marker = new google.maps.Marker({
+  //       position: thisResMarker.coords,
+  //       map:map,
+  //     });
+  //     map.panTo(marker.getPosition());
+  //     map.setZoom(18.2); // focus 하면 줌 조금 더 당겨
+  //     infowindow = new google.maps.InfoWindow({
+  //       content: thisResMarker.name,
+  //     });
+  //     infowindow.open(map, marker);
+  //   })
+  // }
 
-  for (i = 0; i < wesResButtons.length; i++) {
-    const thisResButton = document.getElementById(wesResButtons[i].ID);
-    const thisResMarker = markers[wesResButtons[i].mIndex];
-    thisResButton.addEventListener('click', function() {
-      // 지금 열려 있는 info window 다 지워
-      if (infowindow) {
-        infowindow.close();
-      }
-      // 지금 클릭된 식당의 마커 포커스, info window open
-      const marker = new google.maps.Marker({
-        position: thisResMarker.coords,
-        map:map,
-      });
-      map.panTo(marker.getPosition());
-      map.setZoom(18.2);
-      infowindow = new google.maps.InfoWindow({
-        content: thisResMarker.name,
-      });
-      infowindow.open(map, marker);
-    })
-  }
+  // for (i = 0; i < wesResButtons.length; i++) {
+  //   const thisResButton = document.getElementById(wesResButtons[i].ID);
+  //   const thisResMarker = markers[wesResButtons[i].mIndex];
+  //   thisResButton.addEventListener('click', function() {
+  //     // 지금 열려 있는 info window 다 지워
+  //     if (infowindow) {
+  //       infowindow.close();
+  //     }
+  //     // 지금 클릭된 식당의 마커 포커스, info window open
+  //     const marker = new google.maps.Marker({
+  //       position: thisResMarker.coords,
+  //       map:map,
+  //     });
+  //     map.panTo(marker.getPosition());
+  //     map.setZoom(18.2);
+  //     infowindow = new google.maps.InfoWindow({
+  //       content: thisResMarker.name,
+  //     });
+  //     infowindow.open(map, marker);
+  //   })
+  // }
 
-  for (i = 0; i < chResButtons.length; i++) {
-    const thisResButton = document.getElementById(chResButtons[i].ID);
-    const thisResMarker = markers[chResButtons[i].mIndex];
-    thisResButton.addEventListener('click', function() {
-      // 지금 열려 있는 info window 다 지워
-      if (infowindow) {
-        infowindow.close();
-      }
-      // 지금 클릭된 식당의 마커 포커스, info window open
-      const marker = new google.maps.Marker({
-        position: thisResMarker.coords,
-        map:map,
-      });
-      map.panTo(marker.getPosition());
-      map.setZoom(18.2);
-      infowindow = new google.maps.InfoWindow({
-        content: thisResMarker.name,
-      });
-      infowindow.open(map, marker);
-    })
-  }
+  // for (i = 0; i < chResButtons.length; i++) {
+  //   const thisResButton = document.getElementById(chResButtons[i].ID);
+  //   const thisResMarker = markers[chResButtons[i].mIndex];
+  //   thisResButton.addEventListener('click', function() {
+  //     // 지금 열려 있는 info window 다 지워
+  //     if (infowindow) {
+  //       infowindow.close();
+  //     }
+  //     // 지금 클릭된 식당의 마커 포커스, info window open
+  //     const marker = new google.maps.Marker({
+  //       position: thisResMarker.coords,
+  //       map:map,
+  //     });
+  //     map.panTo(marker.getPosition());
+  //     map.setZoom(18.2);
+  //     infowindow = new google.maps.InfoWindow({
+  //       content: thisResMarker.name,
+  //     });
+  //     infowindow.open(map, marker);
+  //   })
+  // }
 
-  for (i = 0; i < jpResButtons.length; i++) {
-    const thisResButton = document.getElementById(jpResButtons[i].ID);
-    const thisResMarker = markers[jpResButtons[i].mIndex];
-    thisResButton.addEventListener('click', function() {
-      // 지금 열려 있는 info window 다 지워
-      if (infowindow) {
-        infowindow.close();
-      }
-      // 지금 클릭된 식당의 마커 포커스, info window open
-      const marker = new google.maps.Marker({
-        position: thisResMarker.coords,
-        map:map,
-      });
-      map.panTo(marker.getPosition());
-      map.setZoom(18.2);
-      infowindow = new google.maps.InfoWindow({
-        content: thisResMarker.name,
-      });
-      infowindow.open(map, marker);
-    })
-  }
+  // for (i = 0; i < jpResButtons.length; i++) {
+  //   const thisResButton = document.getElementById(jpResButtons[i].ID);
+  //   const thisResMarker = markers[jpResButtons[i].mIndex];
+  //   thisResButton.addEventListener('click', function() {
+  //     // 지금 열려 있는 info window 다 지워
+  //     if (infowindow) {
+  //       infowindow.close();
+  //     }
+  //     // 지금 클릭된 식당의 마커 포커스, info window open
+  //     const marker = new google.maps.Marker({
+  //       position: thisResMarker.coords,
+  //       map:map,
+  //     });
+  //     map.panTo(marker.getPosition());
+  //     map.setZoom(18.2);
+  //     infowindow = new google.maps.InfoWindow({
+  //       content: thisResMarker.name,
+  //     });
+  //     infowindow.open(map, marker);
+  //   })
+  // }
 
-  for (i = 0; i < bbqResButtons.length; i++) {
-    const thisResButton = document.getElementById(bbqResButtons[i].ID);
-    const thisResMarker = markers[bbqResButtons[i].mIndex];
-    thisResButton.addEventListener('click', function() {
-      // 지금 열려 있는 info window 다 지워
-      if (infowindow) {
-        infowindow.close();
-      }
-      // 지금 클릭된 식당의 마커 포커스, info window open
-      const marker = new google.maps.Marker({
-        position: thisResMarker.coords,
-        map:map,
-      });
-      map.panTo(marker.getPosition());
-      map.setZoom(18.2);
-      infowindow = new google.maps.InfoWindow({
-        content: thisResMarker.name,
-      });
-      infowindow.open(map, marker);
-    })
-  }
+  // for (i = 0; i < bbqResButtons.length; i++) {
+  //   const thisResButton = document.getElementById(bbqResButtons[i].ID);
+  //   const thisResMarker = markers[bbqResButtons[i].mIndex];
+  //   thisResButton.addEventListener('click', function() {
+  //     // 지금 열려 있는 info window 다 지워
+  //     if (infowindow) {
+  //       infowindow.close();
+  //     }
+  //     // 지금 클릭된 식당의 마커 포커스, info window open
+  //     const marker = new google.maps.Marker({
+  //       position: thisResMarker.coords,
+  //       map:map,
+  //     });
+  //     map.panTo(marker.getPosition());
+  //     map.setZoom(18.2);
+  //     infowindow = new google.maps.InfoWindow({
+  //       content: thisResMarker.name,
+  //     });
+  //     infowindow.open(map, marker);
+  //   })
+  // }
 
-  for (i = 0; i < cafeResButtons.length; i++) {
-    const thisResButton = document.getElementById(cafeResButtons[i].ID);
-    const thisResMarker = markers[cafeResButtons[i].mIndex];
-    thisResButton.addEventListener('click', function() {
-      // 지금 열려 있는 info window 다 지워
-      if (infowindow) {
-        infowindow.close();
-      }
-      // 지금 클릭된 식당의 마커 포커스, info window open
-      const marker = new google.maps.Marker({
-        position: thisResMarker.coords,
-        map:map,
-      });
-      map.panTo(marker.getPosition());
-      map.setZoom(18.2);
-      infowindow = new google.maps.InfoWindow({
-        content: thisResMarker.name,
-      });
-      infowindow.open(map, marker);
-    })
-  }
+  // for (i = 0; i < cafeResButtons.length; i++) {
+  //   const thisResButton = document.getElementById(cafeResButtons[i].ID);
+  //   const thisResMarker = markers[cafeResButtons[i].mIndex];
+  //   thisResButton.addEventListener('click', function() {
+  //     // 지금 열려 있는 info window 다 지워
+  //     if (infowindow) {
+  //       infowindow.close();
+  //     }
+  //     // 지금 클릭된 식당의 마커 포커스, info window open
+  //     const marker = new google.maps.Marker({
+  //       position: thisResMarker.coords,
+  //       map:map,
+  //     });
+  //     map.panTo(marker.getPosition());
+  //     map.setZoom(18.2);
+  //     infowindow = new google.maps.InfoWindow({
+  //       content: thisResMarker.name,
+  //     });
+  //     infowindow.open(map, marker);
+  //   })
+  // }
 
   
 

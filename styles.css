@@ -29,7 +29,7 @@ a {
   background-color: rgb(0, 100, 255);
   display: flex;
   justify-content: space-around;
-  padding: 0.5rem 0;
+  padding: 0.7rem 0 0.5rem 0;
 }
 #category-bar.fixed {
   position: fixed;
@@ -48,26 +48,8 @@ a {
   cursor:pointer;
   transition:800ms ease all;
   outline:none;
-  width: 6rem;
+  /* width: 6rem; */
   margin: 0.3rem 0;
-}
-
-#category-bar-buttons #korean-button {
-}
-
-#category-bar-buttons #western-button {
-}
-
-#category-bar-buttons #chinese-button {
-}
-
-#category-bar-buttons #japanese-button {
-}
-
-#category-bar-buttons #bbq-button {
-}
-
-#category-bar-buttons #cafe-button {
 }
 
 #category-bar-buttons button:hover{
