@@ -227,6 +227,6 @@ a {
 
 @media (min-width: 58rem) {
   #category-blank {
-    width: calc(100vw - 60rem);
+    width: calc(100vw - 80rem);
   }
 }

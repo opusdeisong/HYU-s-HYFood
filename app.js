@@ -249,7 +249,7 @@ function initMap() {
     var marker = new google.maps.Marker({
       position:props.coords,
       map:map,
-      // icon: props.icon
+      icon: 'location.png'
     });
 
     markersArray.push(marker);
