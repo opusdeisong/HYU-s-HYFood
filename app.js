@@ -54,6 +54,8 @@ function displayList(category) {
         thisRes.classList.add('blockDisplayNone');
       }
     }
+    const kakaoBlock = document.getElementById('kakaomap-info');
+    kakaoBlock.classList.add('blockDisplayNone');
 
     // console.log(category);
 }
@@ -266,6 +268,7 @@ function initMap() {
       // timeoutID = setTimeout(function(){infowindow.close();}, '3000'); // 3초 뒤 윈도우 닫음
       // openCategory(props.category);
       displayRes(props.index); // 클릭된 식당 정보만 표시됨
+      displayKakao(props.index);
     });
 
 
@@ -308,7 +311,21 @@ function initMap() {
   cafeCategoryButtonElement.addEventListener('click', function(){displayCategoryMarkers('cafe')})
 
 
+  const kakaoURLs = [
+    "https://place.map.kakao.com/m/1641421406", "https://place.map.kakao.com/m/540518236", "https://place.map.kakao.com/m/25678383",
+    "https://place.map.kakao.com/m/959085068", "https://place.map.kakao.com/m/1050548452",
+    "https://place.map.kakao.com/m/523557997", "https://place.map.kakao.com/m/8803516", "https://place.map.kakao.com/m/1537623167",
+    "https://place.map.kakao.com/m/25490786", "https://place.map.kakao.com/m/974851048", "https://place.map.kakao.com/m/1840585277",
+    "https://place.map.kakao.com/m/1949358055", "https://place.map.kakao.com/m/27496691",
+    "https://place.map.kakao.com/m/26644887", "https://place.map.kakao.com/m/1557643928", "https://place.map.kakao.com/m/473211511", "https://place.map.kakao.com/19157157"
+  ];
 
+  function displayKakao(index) {
+    const kakaoBlock = document.getElementById('kakaomap-info');
+    kakaoBlock.classList.remove('blockDisplayNone');
+    const frame = document.getElementById('kakaomap-frame');
+    frame.src = kakaoURLs[index];
+  }
 
 
   // 왼쪽에서 식당 이름 눌리면 해당 마커 포커스
@@ -320,9 +337,16 @@ function initMap() {
   {ID:'cafeRes1btn', mIndex: 13}, {ID:'cafeRes2btn', mIndex: 14}, {ID:'cafeRes3btn', mIndex: 15}, {ID:'cafeRes4btn', mIndex: 16}];
 
   for (i = 0; i < ResButtons.length; i++) {
+    const resIndex = ResButtons[i].mIndex;
     const thisResButton = document.getElementById(ResButtons[i].ID);
     const thisResMarker = markers[ResButtons[i].mIndex];
     thisResButton.addEventListener('click', function() {
+      // 왼쪽 사이드바 관련
+      // console.log(resIndex);
+      displayRes(resIndex); // 클릭된 식당 정보만 표시됨
+      displayKakao(resIndex);
+
+      // 마커 관련
       // 지금 열려 있는 info window 다 지워
       if (infowindow) {
         infowindow.close();
@@ -340,8 +364,8 @@ function initMap() {
       });
       infowindow.open(map, marker);
 
+
       marker.addListener('click', function() {
-      
         if(infowindow) {
           infowindow.close();
         }
@@ -350,6 +374,7 @@ function initMap() {
         });
         infowindow.open(map, marker); // 마커 누르면 윈도우 생성
         displayRes(thisResMarker.index); // 클릭된 식당 정보만 표시됨
+        displayKakao(thisResMarker.index);
       });
     })
   }

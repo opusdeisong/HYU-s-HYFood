@@ -89,7 +89,7 @@ a {
 .content-wrapper {
   display: flex;
   flex-wrap: nowrap; /* 추가 */
-  height: calc(100vh - 8rem);
+  height: calc(100vh - 4.5rem);
 }
 .left-scrollable {
   width: 350px; /* commit 3 */
@@ -151,6 +151,25 @@ a {
   font-family: sans-serif;
   margin: 1rem 0;
 }
+
+
+#kakaomap-info {
+  width: 322px;
+  margin: 0;
+  height: calc(100% - 18rem);
+  /* transform: translateY(0px); */
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+#kakaomap-frame {
+  width: 105%;
+  height: 110%;
+  border: 2px solid white;
+  overflow: hidden;
+}
+
+
 
 .blockDisplayNone {
   display: none;
