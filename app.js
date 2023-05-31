@@ -66,6 +66,7 @@ bbqCategoryButtonElement.addEventListener('click', function(){displayList('bbq')
 cafeCategoryButtonElement.addEventListener('click', function(){displayList('cafe')})
 
 
+var markersArray = [];
 
 function initMap() {
 
@@ -221,8 +222,7 @@ function initMap() {
 
 
 
-
-  function displayRes(index) {
+  function displayRes(index) { // 해당 식당만 표시
     for (i = 0; i < resElements.length; i++) {
       const thisRes = document.getElementById(resElements[i].id);
       if (resElements[i].index == index) {
@@ -234,28 +234,30 @@ function initMap() {
       }
     }
 
-
+    
   }
-
-
-
+  
+  
   var infowindow = null;
   // var timeoutID = null;
-
-
+  
+  
   // add marker function
   function addMarker(props) {
     var marker = new google.maps.Marker({
-        position:props.coords,
-        map:map,
-        // icon: props.icon
+      position:props.coords,
+      map:map,
+      // icon: props.icon
     });
 
+    markersArray.push(marker);
+    // console.log(markersArray);
+    
     marker.addListener('click', function() {
       
       if(infowindow) {
         infowindow.close();
-        clearTimeout(timeoutID);
+        // clearTimeout(timeoutID);
       }
       infowindow = new google.maps.InfoWindow({
         content: props.content
@@ -263,18 +265,53 @@ function initMap() {
       infowindow.open(map, marker); // 마커 누르면 윈도우 생성
       // timeoutID = setTimeout(function(){infowindow.close();}, '3000'); // 3초 뒤 윈도우 닫음
       // openCategory(props.category);
-      displayRes(props.index);
+      displayRes(props.index); // 클릭된 식당 정보만 표시됨
     });
+
+
+  }
+  
+
+
+  // category bar button을 누르면 해당 카테고리에 해당하는 마커들만 보임
+  function clearOverlays() { // 모든 마커 삭제(표시 안 됨)
+    for (var i = 0; i < markersArray.length; i++ ) {
+      markersArray[i].setMap(null);
+    }
+    markersArray.length = 0;
+  }
+  
+
+  function displayCategoryMarkers(category) {
+    // console.log(category)
+    clearOverlays();
+    var latLng = new google.maps.LatLng(37.5600, 127.0400);
+    map.setCenter(latLng);
+    map.setZoom(17.3);
+    // map.setCenter(127.0400, 37.5600, 17.3);
+    
+
+    for (i = 0; i < markers.length; i++) {
+      if (markers[i].category == category) {
+        addMarker(markers[i]);
+        // console.log(markers[i].coords)
+      }
+
+    }
   }
 
+  koreanCategoryButtonElement.addEventListener('click', function(){displayCategoryMarkers('korean')})
+  westernCategoryButtonElement.addEventListener('click', function(){displayCategoryMarkers('western')})
+  chineseCategoryButtonElement.addEventListener('click', function(){displayCategoryMarkers('chinese')})
+  japaneseCategoryButtonElement.addEventListener('click', function(){displayCategoryMarkers('japanese')})
+  bbqCategoryButtonElement.addEventListener('click', function(){displayCategoryMarkers('bbq')})
+  cafeCategoryButtonElement.addEventListener('click', function(){displayCategoryMarkers('cafe')})
 
 
 
 
 
-
-
-
+  // 왼쪽에서 식당 이름 눌리면 해당 마커 포커스
   const ResButtons = [{ID:'korRes1btn', mIndex: 0}, {ID: 'korRes2btn', mIndex: 1}, {ID: 'korRes3btn', mIndex:2}, 
   {ID:'wesRes1btn', mIndex: 3}, {ID:'wesRes2btn', mIndex: 4},
   {ID:'chRes1btn', mIndex: 5}, {ID:'chRes2btn', mIndex: 6}, {ID:'chRes3btn', mIndex: 7},
@@ -295,6 +332,7 @@ function initMap() {
         position: thisResMarker.coords,
         map:map,
       });
+      markersArray.push(marker);
       map.panTo(marker.getPosition());
       map.setZoom(18.2); // focus 하면 줌 조금 더 당겨
       infowindow = new google.maps.InfoWindow({
