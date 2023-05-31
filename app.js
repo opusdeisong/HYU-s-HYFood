@@ -22,26 +22,48 @@ const japaneseCategoryButtonElement = document.getElementById('japanese-button')
 const bbqCategoryButtonElement = document.getElementById('bbq-button');
 const cafeCategoryButtonElement = document.getElementById('cafe-button');
 
-const allCategoryBoxElements = document.querySelectorAll('.category-box-list .category-box');
 
-function displayList(thisListID) {
-    // const blankCategoryBox = document.getElementById('blank-category-box');
-    const thisCategoryBox = document.getElementById(thisListID);
-    // blankCategoryBox.classList.add('blockDisplayNone');
-    for (const categoryBoxElement of allCategoryBoxElements) {
-        categoryBoxElement.classList.add('blockDisplayNone');
+const resElements = [
+  {id: 'korRes1', category: 'korean', index: 0},
+  {id: 'korRes2', category: 'korean', index: 1},
+  {id: 'korRes3', category: 'korean', index: 2},
+  {id: 'wesRes1', category: 'western', index: 3},
+  {id: 'wesRes2', category: 'western', index: 4},
+  {id: 'chRes1', category: 'chinese', index: 5},
+  {id: 'chRes2', category: 'chinese', index: 6},
+  {id: 'chRes3', category: 'chinese', index: 7},
+  {id: 'jpRes1', category: 'japanese', index: 8},
+  {id: 'jpRes2', category: 'japanese', index: 9},
+  {id: 'jpRes3', category: 'japanese', index: 10},
+  {id: 'bbqRes1', category: 'bbq', index: 11},
+  {id: 'bbqRes2', category: 'bbq', index: 12},
+  {id: 'cafeRes1', category: 'cafe', index: 13},
+  {id: 'cafeRes2', category: 'cafe', index: 14},
+  {id: 'cafeRes3', category: 'cafe', index: 15},
+  {id: 'cafeRes4', category: 'cafe', index: 16},
+]
+
+function displayList(category) {
+    for (i = 0; i < resElements.length; i++) {
+      const thisRes = document.getElementById(resElements[i].id);
+      if (resElements[i].category == category) {
+        // console.log(resElements[i].id);
+        thisRes.classList.remove('blockDisplayNone');
+      }
+      else {
+        thisRes.classList.add('blockDisplayNone');
+      }
     }
-    thisCategoryBox.classList.remove('blockDisplayNone');
+
+    // console.log(category);
 }
 
-koreanCategoryButtonElement.addEventListener('click', function(){displayList('korean-category-box')})
-westernCategoryButtonElement.addEventListener('click', function(){displayList('western-category-box')})
-chineseCategoryButtonElement.addEventListener('click', function(){displayList('chinese-category-box')})
-japaneseCategoryButtonElement.addEventListener('click', function(){displayList('japanese-category-box')})
-bbqCategoryButtonElement.addEventListener('click', function(){displayList('bbq-category-box')})
-cafeCategoryButtonElement.addEventListener('click', function(){displayList('cafe-category-box')})
-
-
+koreanCategoryButtonElement.addEventListener('click', function(){displayList('korean')})
+westernCategoryButtonElement.addEventListener('click', function(){displayList('western')})
+chineseCategoryButtonElement.addEventListener('click', function(){displayList('chinese')})
+japaneseCategoryButtonElement.addEventListener('click', function(){displayList('japanese')})
+bbqCategoryButtonElement.addEventListener('click', function(){displayList('bbq')})
+cafeCategoryButtonElement.addEventListener('click', function(){displayList('cafe')})
 
 
 
@@ -196,33 +218,30 @@ function initMap() {
     addMarker(markers[i]);
   }
 
-  var infowindow = null;
-  var timeoutID = null;
 
-  // function openCategory(category) {
-  //   if (category == "korean") {
-  //     displayList('korean-category-box');
-  //   }
-  //   if (category == "western") {
-  //     displayList('western-category-box');
-  //   }
-  //   if (category == "chinese") {
-  //     displayList('chinese-category-box');
-  //   }
-  //   if (category == "japanese") {
-  //     displayList('japanese-category-box');
-  //   }
-  //   if (category == "bbq") {
-  //     displayList('bbq-category-box');
-  //   }
-  //   if (category == "cafe") {
-  //     displayList('cafe-category-box');
-  //   }
-  // }
+
+
 
   function displayRes(index) {
-    thisRes = ResButtons[index]
+    for (i = 0; i < resElements.length; i++) {
+      const thisRes = document.getElementById(resElements[i].id);
+      if (resElements[i].index == index) {
+        // console.log(resElements[i].id);
+        thisRes.classList.remove('blockDisplayNone');
+      }
+      else {
+        thisRes.classList.add('blockDisplayNone');
+      }
+    }
+
+
   }
+
+
+
+  var infowindow = null;
+  // var timeoutID = null;
+
 
   // add marker function
   function addMarker(props) {
@@ -239,14 +258,22 @@ function initMap() {
         clearTimeout(timeoutID);
       }
       infowindow = new google.maps.InfoWindow({
-        content: props.name
+        content: props.content
       });
       infowindow.open(map, marker); // 마커 누르면 윈도우 생성
-      timeoutID = setTimeout(function(){infowindow.close();}, '3000'); // 3초 뒤 윈도우 닫음
+      // timeoutID = setTimeout(function(){infowindow.close();}, '3000'); // 3초 뒤 윈도우 닫음
       // openCategory(props.category);
       displayRes(props.index);
     });
   }
+
+
+
+
+
+
+
+
 
   const ResButtons = [{ID:'korRes1btn', mIndex: 0}, {ID: 'korRes2btn', mIndex: 1}, {ID: 'korRes3btn', mIndex:2}, 
   {ID:'wesRes1btn', mIndex: 3}, {ID:'wesRes2btn', mIndex: 4},
@@ -276,139 +303,6 @@ function initMap() {
       infowindow.open(map, marker);
     })
   }
-  
-  // for (i = 0; i < korResButtons.length; i++) {
-  //   const thisResButton = document.getElementById(korResButtons[i].ID);
-  //   const thisResMarker = markers[korResButtons[i].mIndex];
-  //   thisResButton.addEventListener('click', function() {
-  //     // 지금 열려 있는 info window 다 지워
-  //     if (infowindow) {
-  //       infowindow.close();
-  //     }
-  //     // 지금 클릭된 식당의 마커 포커스, info window open
-  //     const marker = new google.maps.Marker({
-  //       position: thisResMarker.coords,
-  //       map:map,
-  //     });
-  //     map.panTo(marker.getPosition());
-  //     map.setZoom(18.2); // focus 하면 줌 조금 더 당겨
-  //     infowindow = new google.maps.InfoWindow({
-  //       content: thisResMarker.name,
-  //     });
-  //     infowindow.open(map, marker);
-  //   })
-  // }
 
-  // for (i = 0; i < wesResButtons.length; i++) {
-  //   const thisResButton = document.getElementById(wesResButtons[i].ID);
-  //   const thisResMarker = markers[wesResButtons[i].mIndex];
-  //   thisResButton.addEventListener('click', function() {
-  //     // 지금 열려 있는 info window 다 지워
-  //     if (infowindow) {
-  //       infowindow.close();
-  //     }
-  //     // 지금 클릭된 식당의 마커 포커스, info window open
-  //     const marker = new google.maps.Marker({
-  //       position: thisResMarker.coords,
-  //       map:map,
-  //     });
-  //     map.panTo(marker.getPosition());
-  //     map.setZoom(18.2);
-  //     infowindow = new google.maps.InfoWindow({
-  //       content: thisResMarker.name,
-  //     });
-  //     infowindow.open(map, marker);
-  //   })
-  // }
-
-  // for (i = 0; i < chResButtons.length; i++) {
-  //   const thisResButton = document.getElementById(chResButtons[i].ID);
-  //   const thisResMarker = markers[chResButtons[i].mIndex];
-  //   thisResButton.addEventListener('click', function() {
-  //     // 지금 열려 있는 info window 다 지워
-  //     if (infowindow) {
-  //       infowindow.close();
-  //     }
-  //     // 지금 클릭된 식당의 마커 포커스, info window open
-  //     const marker = new google.maps.Marker({
-  //       position: thisResMarker.coords,
-  //       map:map,
-  //     });
-  //     map.panTo(marker.getPosition());
-  //     map.setZoom(18.2);
-  //     infowindow = new google.maps.InfoWindow({
-  //       content: thisResMarker.name,
-  //     });
-  //     infowindow.open(map, marker);
-  //   })
-  // }
-
-  // for (i = 0; i < jpResButtons.length; i++) {
-  //   const thisResButton = document.getElementById(jpResButtons[i].ID);
-  //   const thisResMarker = markers[jpResButtons[i].mIndex];
-  //   thisResButton.addEventListener('click', function() {
-  //     // 지금 열려 있는 info window 다 지워
-  //     if (infowindow) {
-  //       infowindow.close();
-  //     }
-  //     // 지금 클릭된 식당의 마커 포커스, info window open
-  //     const marker = new google.maps.Marker({
-  //       position: thisResMarker.coords,
-  //       map:map,
-  //     });
-  //     map.panTo(marker.getPosition());
-  //     map.setZoom(18.2);
-  //     infowindow = new google.maps.InfoWindow({
-  //       content: thisResMarker.name,
-  //     });
-  //     infowindow.open(map, marker);
-  //   })
-  // }
-
-  // for (i = 0; i < bbqResButtons.length; i++) {
-  //   const thisResButton = document.getElementById(bbqResButtons[i].ID);
-  //   const thisResMarker = markers[bbqResButtons[i].mIndex];
-  //   thisResButton.addEventListener('click', function() {
-  //     // 지금 열려 있는 info window 다 지워
-  //     if (infowindow) {
-  //       infowindow.close();
-  //     }
-  //     // 지금 클릭된 식당의 마커 포커스, info window open
-  //     const marker = new google.maps.Marker({
-  //       position: thisResMarker.coords,
-  //       map:map,
-  //     });
-  //     map.panTo(marker.getPosition());
-  //     map.setZoom(18.2);
-  //     infowindow = new google.maps.InfoWindow({
-  //       content: thisResMarker.name,
-  //     });
-  //     infowindow.open(map, marker);
-  //   })
-  // }
-
-  // for (i = 0; i < cafeResButtons.length; i++) {
-  //   const thisResButton = document.getElementById(cafeResButtons[i].ID);
-  //   const thisResMarker = markers[cafeResButtons[i].mIndex];
-  //   thisResButton.addEventListener('click', function() {
-  //     // 지금 열려 있는 info window 다 지워
-  //     if (infowindow) {
-  //       infowindow.close();
-  //     }
-  //     // 지금 클릭된 식당의 마커 포커스, info window open
-  //     const marker = new google.maps.Marker({
-  //       position: thisResMarker.coords,
-  //       map:map,
-  //     });
-  //     map.panTo(marker.getPosition());
-  //     map.setZoom(18.2);
-  //     infowindow = new google.maps.InfoWindow({
-  //       content: thisResMarker.name,
-  //     });
-  //     infowindow.open(map, marker);
-  //   })
-  // }
-
-  
 
 }

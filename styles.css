@@ -156,6 +156,14 @@ a {
   display: none;
 }
 
+.blockDisplayBlock {
+  display: block;
+}
+
+
+
+
+
 .image-container {
   width: calc(98vw - 350px); /* 수정된 너비 비율 설정 */
   height: 100%;
