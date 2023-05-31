@@ -37,37 +37,67 @@ a {
   width: 100%;
   z-index: 100;
 }
-#category-bar-buttons {
-  margin-left: 350px;
-}
 #category-bar-buttons button {
-  font: inherit;
-  font-size: 1.2rem;
-  font-weight: 600;
-  cursor: pointer;
-  background-color: transparent;
-  /* color: white; */
+  background:transparent;
+  color: white;
+  border:none;
+  position:relative;
+  height:30px;
+  font-size:16px;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
   width: 6rem;
   margin: 0.3rem 0;
-  border: 0;
 }
-#korean-button {
-  color: rgb(255, 142, 142) ;
+
+#category-bar-buttons #korean-button {
 }
-#western-button {
-  color: rgb(255, 255, 86);
+
+#category-bar-buttons #western-button {
 }
-#chinese-button {
-  color: rgb(131, 255, 255);
+
+#category-bar-buttons #chinese-button {
 }
-#japanese-button {
-  color: rgb(255, 188, 65);
+
+#category-bar-buttons #japanese-button {
 }
-#bbq-button {
-  color: lightpink;
+
+#category-bar-buttons #bbq-button {
 }
-#cafe-button {
-  color: rgb(219, 135, 252) ;
+
+#category-bar-buttons #cafe-button {
+}
+
+#category-bar-buttons button:hover{
+  background:#fff;
+  color: rgb(0, 100, 255);
+}
+
+#category-bar-buttons button:before,
+#category-bar-buttons button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: rgb(0, 100, 255);
+  transition:400ms ease all;
+}
+
+#category-bar-buttons button:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+
+#category-bar-buttons button:hover:before,
+#category-bar-buttons button:hover:after{
+  width:100%;
+  transition:800ms ease all;
 }
 
 
