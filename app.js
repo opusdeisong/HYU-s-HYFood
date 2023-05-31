@@ -1,19 +1,19 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const navbar = document.querySelector("#category-bar");
-  const logoContainer = document.querySelector(".logo-container");
+// document.addEventListener("DOMContentLoaded", function () {
+//   const navbar = document.querySelector("#category-bar");
+//   const logoContainer = document.querySelector(".logo-container");
 
-  window.addEventListener("scroll", function () {
-    const navbarHeight = navbar.offsetHeight;
-    const scrollPosition = window.pageYOffset;
+//   window.addEventListener("scroll", function () {
+//     const navbarHeight = navbar.offsetHeight;
+//     const scrollPosition = window.pageYOffset;
 
-    if (scrollPosition >= logoContainer.offsetHeight) {
-      navbar.classList.add("fixed");
-    } else {
-      navbar.classList.remove("fixed");
-    }
-  });
+//     if (scrollPosition >= logoContainer.offsetHeight) {
+//       navbar.classList.add("fixed");
+//     } else {
+//       navbar.classList.remove("fixed");
+//     }
+//   });
   
-});
+// });
 
 const koreanCategoryButtonElement = document.getElementById('korean-button');
 const westernCategoryButtonElement = document.getElementById('western-button');
@@ -317,7 +317,7 @@ function initMap() {
     "https://place.map.kakao.com/m/523557997", "https://place.map.kakao.com/m/8803516", "https://place.map.kakao.com/m/1537623167",
     "https://place.map.kakao.com/m/25490786", "https://place.map.kakao.com/m/974851048", "https://place.map.kakao.com/m/1840585277",
     "https://place.map.kakao.com/m/1949358055", "https://place.map.kakao.com/m/27496691",
-    "https://place.map.kakao.com/m/26644887", "https://place.map.kakao.com/m/1557643928", "https://place.map.kakao.com/m/473211511", "https://place.map.kakao.com/19157157"
+    "https://place.map.kakao.com/m/26644887", "https://place.map.kakao.com/m/1557643928", "https://place.map.kakao.com/m/473211511", "https://place.map.kakao.com/m/19157157"
   ];
 
   function displayKakao(index) {

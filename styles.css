@@ -82,6 +82,9 @@ a {
   transition:800ms ease all;
 }
 
+#category-blank {
+  width: 0;
+}
 
 
 
@@ -91,12 +94,17 @@ a {
   flex-wrap: nowrap; /* 추가 */
   height: calc(100vh - 4.5rem);
 }
+.left-scrollable-container {
+  width: 376px;
+  overflow: hidden;
+}
 .left-scrollable {
-  width: 350px; /* commit 3 */
+  width: 352px; /* commit 3 */
   height: calc(100% - 3rem);
   overflow-y: scroll;
   background-color: #f0f8ff;
   padding: 1.5rem; /* commit 3 */
+  /* overflow: hidden; */
 }
 
 .category-box-list {
@@ -154,9 +162,10 @@ a {
 
 
 #kakaomap-info {
-  width: 322px;
+  width: 328px;
   margin: 0;
-  height: calc(100% - 18rem);
+  /* height: calc(100% - 16rem); */
+  height: calc(100vh - 24.7rem);
   /* transform: translateY(0px); */
   -moz-border-radius: 6px;
   border-radius: 6px;
@@ -208,4 +217,16 @@ a {
   height: 100%;
   width: 100%;
   margin: 0 auto;
+}
+
+
+
+
+
+
+
+@media (min-width: 58rem) {
+  #category-blank {
+    width: calc(100vw - 60rem);
+  }
 }
