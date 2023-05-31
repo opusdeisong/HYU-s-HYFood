@@ -94,21 +94,21 @@ function initMap() {
   var markers = [
     {
       coords:{lat:37.5605, lng:127.0406},
-      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>칠구네 신림동백순대</p> <img src='images/백순대.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>칠구네 신림동백순대</p> <img src='images/baek.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/red-dot.png",
       category: "korean",
       index: 0
     },
     {
       coords: {lat:37.5585, lng:127.0399},
-      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>이돈집</p> <img src='images/이돈집.png' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>이돈집</p> <img src='images/lee.png' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/red-dot.png",
       category: "korean",
       index: 1
     },
     {
       coords: {lat:37.5586, lng:127.0405},
-      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>더진국수육국밥</p> <img src='images/더진국.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>더진국수육국밥</p> <img src='images/thejin.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/red-dot.png",
       category: "korean",
       index: 2
@@ -122,21 +122,21 @@ function initMap() {
     },
     {
       coords: {lat:37.5607, lng:127.0398},
-      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>봄의정원</p> <img src='images/봄의정원.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>봄의정원</p> <img src='images/spring.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/yellow-dot.png",
       category: "western",
       index:4
     },
     {
       coords: {lat:37.5593, lng:127.0399}, // 세로, 가로
-      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>용용선생</p> <img src='images/용용선생.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>용용선생</p> <img src='images/yong.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/ltblue-dot.png",
       category: "chinese",
       index:5
     },
     {
       coords: {lat:37.5597, lng:127.0409},
-      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>금룡</p> <img src='images/금룡.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>금룡</p> <img src='images/keum.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/ltblue-dot.png",
       category: "chinese",
       index:6
@@ -171,42 +171,42 @@ function initMap() {
     },
     {
       coords:{lat:37.5600, lng:127.0396},
-      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>뒷돈산</p> <img src='images/뒷돈산.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>뒷돈산</p> <img src='images/behind.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/pink-dot.png",
       category: "bbq",
       index:11
     },
     {
       coords: {lat:37.5591, lng:127.0403}, // 세로, 가로
-      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>장모족발</p> <img src='images/장모족발.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>장모족발</p> <img src='images/jang.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/pink-dot.png",
       category: "bbq",
       index:12
     },
     {
       coords: {lat:37.5587, lng:127.0406},
-      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>설빙</p> <img src='images/설빙.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>설빙</p> <img src='images/sulbing.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/purple-dot.png",
       category: "cafe",
       index:13
     },
     {
       coords: {lat:37.56025, lng:127.0406},
-      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>짙은</p> <img src='images/짙은.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>짙은</p> <img src='images/zitten.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/purple-dot.png",
       category: "cafe",
       index:14
     },
     {
       coords: {lat:37.5613, lng:127.03955},
-      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>어질 인</p> <img src='images/어질인.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>어질 인</p> <img src='images/wise.jpeg' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/purple-dot.png",
       category: "cafe",
       index:15
     },
     {
       coords: {lat:37.5602, lng:127.03945},
-      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>띵똥와플</p> <img src='images/띵똥.png' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
+      content: "<p style='margin:0 0 0.4rem 0.3rem; font-size:1rem; font-weight:bold; text-align:center; color:rgb(0, 100, 255)'>띵똥와플</p> <img src='images/ding.png' style='height:100px; object-fit:cover; margin-left:0.3rem; border-radius:4px;'/>",
       icon: "http://maps.google.com/mapfiles/ms/micons/purple-dot.png",
       category: "cafe",
       index:16
