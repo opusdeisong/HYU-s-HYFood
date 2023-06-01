@@ -241,6 +241,7 @@ function initMap() {
   
   
   var infowindow = null;
+  var isClicked = false;
   // var timeoutID = null;
   
   
@@ -261,14 +262,45 @@ function initMap() {
         infowindow.close();
         // clearTimeout(timeoutID);
       }
+      
       infowindow = new google.maps.InfoWindow({
         content: props.content
       });
+
       infowindow.open(map, marker); // 마커 누르면 윈도우 생성
+      isClicked = true;
+
+      google.maps.event.addListener(infowindow, 'closeclick', function() {
+        isClicked = false;
+      });
+    
       // timeoutID = setTimeout(function(){infowindow.close();}, '3000'); // 3초 뒤 윈도우 닫음
       // openCategory(props.category);
       displayRes(props.index); // 클릭된 식당 정보만 표시됨
       displayKakao(props.index);
+    });
+
+    marker.addListener('mouseover', function() {
+      // if(infowindow) {
+      //   infowindow.close();
+      // }
+      if (!infowindow) {
+        infowindow = new google.maps.InfoWindow({
+          content: props.content
+        });
+
+        infowindow.open(map, this);
+        // isClicked = false;
+      }
+    });
+    
+    // assuming you also want to hide the infowindow when user mouses-out
+    marker.addListener('mouseout', function() {
+        if (infowindow && !isClicked) {
+          infowindow.close();
+          infowindow = null;
+          // isClicked = false;
+        }
     });
 
 
@@ -301,6 +333,7 @@ function initMap() {
       }
 
     }
+    isClicked = false;
   }
 
   koreanCategoryButtonElement.addEventListener('click', function(){displayCategoryMarkers('korean')})
@@ -355,6 +388,7 @@ function initMap() {
       const marker = new google.maps.Marker({
         position: thisResMarker.coords,
         map:map,
+        icon: 'location.png'
       });
       markersArray.push(marker);
       map.panTo(marker.getPosition());
