@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About HYUfood</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            background-color: rgb(0, 100, 255);
+            color: white;
+            font-size: 2.5em;
+        }
+
+        h2 {
+            color: rgb(0, 100, 255);
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        a {
+            color: rgb(0, 100, 255);
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        a:hover {
+            color: #555555;
+        }
+
+        .return-link {
+            background: rgb(0, 100, 255);
+            color: white;
+            border: none;
+            position: relative;
+            height: 30px;
+            font-size: 16px;
+            padding: 0 2em;
+            cursor: pointer;
+            transition: 800ms ease all;
+            outline: none;
+            margin: 0.3rem 0;
+            display: block;
+            text-align: center;
+            line-height: 30px;
+            width: 9rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .return-link:before,
+        .return-link:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 2px;
+            width: 0;
+            background: #f0f0f0;
+            transition: 400ms ease all;
+        }
+
+        .return-link:after {
+            right: inherit;
+            top: inherit;
+            left: 0;
+            bottom: 0;
+        }
+
+        .return-link:hover {
+            background: #f0f0f0;
+            color: rgb(0, 100, 255);
+        }
+
+        .return-link:hover:before,
+        .return-link:hover:after {
+            width: 100%;
+            transition: 800ms ease all;
+        }
+        li {
+            margin-bottom: 0.5em;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to HYUfood!</h1>
+    </header>
+
+    <section>
+        <h2>Our Mission 🎯</h2>
+        <ul>
+            <li>🚀 Elevating the campus food experience for Hanyang University students</li>
+            <li>🔍 Uncovering hidden local food gems around the campus</li>
+            <li>🍽️ Celebrating the diversity and richness of our local food scene</li>
+            <li>👨‍🍳 Supporting local restaurants, cafés and eateries</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Interactive Mapping 🗺️</h2>
+        <ul>
+            <li>📍 Leveraging Google Map's API for seamless navigation</li>
+            <li>🔖 Bookmark your favorite spots for easy access</li>
+            <li>🕹️ Enjoy a user-friendly and intuitive map interface</li>
+            <li>📲 Optimized for both desktop and mobile platforms</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Spot Details 🔍</h2>
+        <ul>
+            <li>🖱️ Click a marker to unveil an array of spot details</li>
+            <li>🕐 Get insights on operating hours to plan your visit</li>
+            <li>☎️ Directly connect with spots via provided contact numbers</li>
+            <li>📸 Explore spots through eye-catching images</li>
+            <li>🗨️ Share and read reviews from fellow students</li>
+            <li>🌏 Kakao Map integration for even more comprehensive location info</li>
+        </ul>
+    </section>
+
+    <a class="return-link" href="index.html">Return to HYUfood</a>
+</body>
+</html>
